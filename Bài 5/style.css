@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.danhmuc{
+    background-color: #2fa4e7;
+}
+
+.danhmuc-danhsach{
+    display: flex;
+    list-style: none; /* bỏ dấu chấm */
+}
+
+.danhmuc-muc{
+    float: left;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.danhmuc-lienket{
+    color: white;
+    text-decoration: none; /*bỏ gạch chân */
+    font-size: larger;
+    font-weight: bold;
+}
+
+.danhmuc-lienket:hover { 
+    color: gray;
+    /* hover: trỏ chuột đến chữ đổi qua màu xám */
+}
+
+.logo{
+    height: 80px;
+    background-color: grey;
+}
+
+/* cho phép xóa block để không chiếm hết 1 dòng */
+main{
+    display: flex;
+}
+
+.noidung-trai {
+    height: 1000px;
+    background-color: aqua;
+    width: 80%;
+    border-radius: 10px 10px 0px 0px; /*bo tròn chỉ bo bên trên*/
+}
+
+.noidung-phai {
+    height: 1000px;
+    background-color: chocolate;    
+    width: 20%;
+}
+
+.tieude {
+    background-attachment: #1a8dc1;
+    padding: 20px;
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.tintuc-danhsach {
+    display: flex;
+    justify-content: space-between;
+}
+
+.baiviet {
+    height: 200px;
+    background-color: grey;
+    width: 32%;
+
+}
+
+.img {
+    height: 50%;
+    width: 100%;
+}
