@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Mở thẻ HTML, ngôn ngữ mặc định là tiếng Anh -->
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- Bộ mã ký tự: UTF-8 (hỗ trợ tiếng Việt) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Ví dụ code trang đào tạo HUMG</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Giúp trang web hiển thị tốt trên điện thoại, responsive -->
+    <title> Ví dụ code trang đào tạo HUMG</title> <!-- Tiêu đề -->
+    <link rel="stylesheet" href="style.css"> <!-- Gắn file CSS ngoài -->
 </head>
 
 <body>
     <!-- Chia bố cục trang web thành 3 phần: header, main, footer -->
      <header>  
         <div>
-        <nav class="danhmuc"> <!-- nav -->
-                <ul class="danhmuc-danhsach">
-                    <li class="danhmuc-muc"> <!-- list -->
+        <nav class="danhmuc"> <!-- nav --> <!-- Thanh menu điều hướng -->
+                <ul class="danhmuc-danhsach"> <!-- Danh sách menu -->
+                    <li class="danhmuc-muc"> <!-- Một mục menu -->
                         <a href="#" class="danhmuc-lienket"> Trang chủ </a>
                     </li>
                     <li class="danhmuc-muc">
@@ -31,34 +32,51 @@
                 </ul>
             </nav>
         </div>
-        <div class="logo"><!-- về gắn thẻ img vào -->
+        <div class="logo"><!-- Khu logo -->
+            <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="Logo HUMG" height="60">
         </div>
 
      </header>
      <main>
-<!-- Nội dung bên trái -->
+        <!-- Nội dung bên trái -->
         <div class="noidung-trai">
             <!-- khối tin tức -->
              <div class="tintuc">
-             <div class="tieude">
-                Tin tức
-        </div>
-<!-- Danh sách tin tức -->
+             <div class="tieude">Tin tức</div>
+        <!-- Danh sách tin tức -->
         <div class="tintuc-danhsach">
-            <div class="1"> 1</div>
-            <img class="1" src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg >
-            width="30" height="30">
+                    <!-- Bài viết 1 -->
+                    <div class="baiviet">
+                        <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="Hướng dẫn thực tập" height="60">
+                        <p class="ngay">20/01/2024 00:00</p>
+                        <p class="tieude-baiviet">
+                            Hướng dẫn quy trình Thực tập, Đồ án (từ Học kỳ 2 năm học 2023-2024)
+                        </p> <!-- Tiêu đề bài viết -->
+                    </div>
         
-        <div class="1">
-              <img src=" alt="">
-              </div>
+                    <!-- Bài viết 2 -->
+                    <div class="baiviet">
+                        <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="Kiểm định chất lượng">
+                        <p class="ngay">24/09/2024 09:24</p>
+                        <p class="tieude-baiviet">
+                            Trường Đại học Mỏ – Địa chất đạt chứng nhận kiểm định chất lượng cơ sở giáo dục
+                        </p>
+                    </div>
+
+                    <!-- Bài viết 3 -->
+                    <div class="baiviet">
+                        <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="Lễ ký kết hợp tác">
+                        <p class="ngay">24/09/2024 09:36</p>
+                        <p class="tieude-baiviet">
+                            Lễ ký kết Biên bản ghi nhớ hợp tác giữa Trường Đại học Mỏ – Địa chất với Công ty cổ phần Giáo dục
+                        </p>
+                    </div>
+                </div>
             </div>
-        <div class="baiviet">
-            3
         </div>
      </main>
      <footer>
-
+        <p>&copy; 2024 HUMG</p>
      </footer>
 </body>
 

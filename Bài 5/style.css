@@ -1,88 +1,118 @@
 body{
-    margin: 0;
-    padding: 0;
-    font-family: 'Times New Roman', Times, serif;
+    margin: 0; /* Xóa khoảng cách mặc định ngoài (margin) */
+    padding: 0; /* Xóa khoảng cách mặc định trong (padding) */
+    font-family: 'Times New Roman', Times, serif; /* Font chữ chính */
 }
 
 ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    list-style-type: none; /* Bỏ dấu chấm đầu dòng mặc định của ul */
+    margin: 0; /* Xóa margin mặc định */
+    padding: 0; /* Xóa padding mặc định */
+    overflow: hidden; /* Nếu có phần tử con tràn ra thì ẩn đi */
 }
 
 .danhmuc{
-    background-color: #2fa4e7;
+    background-color: #2fa4e7; /* Nền xanh của thanh menu */
 }
 
 .danhmuc-danhsach{
-    display: flex;
-    list-style: none; /* bỏ dấu chấm */
+    display: flex; /* Dùng flex để sắp xếp các mục menu theo hàng ngang */
+    list-style: none; /* Bỏ dấu chấm đầu dòng */
 }
 
 .danhmuc-muc{
-    float: left;
-    padding: 14px 16px;
-    text-align: center;
+    float: left; /* Cho các mục menu nằm ngang (không cần thiết khi đã dùng flex) */
+    padding: 14px 16px; /* Khoảng cách trong của từng mục menu */
+    text-align: center; /* Căn giữa chữ theo chiều ngang */
 }
 
 .danhmuc-lienket{
-    color: white;
-    text-decoration: none; /*bỏ gạch chân */
-    font-size: larger;
-    font-weight: bold;
+    color: white; /* Chữ màu trắng */
+    text-decoration: none; /* Bỏ gạch chân mặc định của link */
+    font-size: larger; /* Kích thước chữ lớn hơn */
+    font-weight: bold; /* In đậm chữ */
 }
 
-.danhmuc-lienket:hover { 
-    color: gray;
-    /* hover: trỏ chuột đến chữ đổi qua màu xám */
+.danhmuc-lienket:hover {  
+    color: gray; /* Khi rê chuột vào link thì đổi màu chữ thành xám */
 }
 
 .logo{
-    height: 80px;
-    background-color: grey;
+    height: 80px;/* Chiều cao vùng chứa logo */
+    background-color: grey; /* Nền xám (chỗ logo) */
 }
 
-/* cho phép xóa block để không chiếm hết 1 dòng */
+
 main{
-    display: flex;
+    display: flex; /* Chia main thành 2 cột (trái và phải) */
 }
 
 .noidung-trai {
-    height: 1000px;
-    background-color: aqua;
-    width: 80%;
-    border-radius: 10px 10px 0px 0px; /*bo tròn chỉ bo bên trên*/
+    height: 1000px; /* Chiều cao khối nội dung bên trái */
+    background-color: aqua; /* Nền xanh nhạt để dễ phân biệt */
+    width: 80%; /* Chiếm 80% chiều ngang trang */
+    border-radius: 10px 10px 0px 0px; /* Bo tròn góc trên trái và phải */
 }
 
 .noidung-phai {
-    height: 1000px;
-    background-color: chocolate;    
-    width: 20%;
+    height: 1000px; /* Chiều cao khối nội dung bên phải */
+    background-color: chocolate;  /* Nền màu nâu */
+    width: 20%; /* Chiếm 20% chiều ngang trang */
 }
 
 .tieude {
-    background-attachment: #1a8dc1;
-    padding: 20px;
-    color: white;
-    font-size: x-large;
-    font-weight: bold;
-    border-radius: 10px 10px 0px 0px;
+    background-color: #1a8dc1; /* Nền xanh dương đậm cho tiêu đề khối tin tức */
+    padding: 10px; /* Khoảng cách trong cho chữ */
+    color: white; /* Màu chữ trắng */
+    font-size: x-large; /* Kích thước chữ lớn */
+    font-weight: bold; /* Chữ in đậm */
+    border-radius: 10px 10px 0px 0px;/* Bo tròn 2 góc trên */
 }
 
-.tintuc-danhsach {
-    display: flex;
-    justify-content: space-between;
+.tintuc-danhsach { 
+    display: flex; /* Hiển thị các bài viết nằm ngang */
+    justify-content: space-between; /* Cách đều các bài viết */
+    gap: 10px;
 }
 
 .baiviet {
-    height: 200px;
-    background-color: grey;
-    width: 32%;
-
+    flex: 1; /* Mỗi bài viết chiếm đều diện tích */
+    position: relative; /* Để các thành phần con (ngày, tiêu đề) có thể định vị tuyệt đối */
+    border-radius: 6px; /* Bo tròn khung bài viết */
+    overflow: hidden; /* Nội dung vượt quá khung sẽ bị ẩn */
+    border: 1px solid #ddd; /* Viền xám nhạt quanh bài viết */
+    background: white;  /* Nền trắng */
 }
 
-.img {
-    height: 50%;
-    width: 100%;
+.baiviet img {
+    width: 100%; /* Ảnh chiếm toàn chiều ngang */
+    height: 160px; /* Chiều cao ảnh cố định */
+    object-fit: cover; /* Ảnh sẽ cắt/zoom để lấp đầy khung */
+    display: block; /* Hiển thị dạng block (tránh khoảng trắng dư) */
+}
+
+/* Ngày tháng - góc phải trên */
+.baiviet .ngay {
+    position: absolute; /* Định vị tuyệt đối so với .baiviet */
+    top: 5px; /* Cách mép trên 5px */
+    right: 5px; /* Cách mép phải 5px */
+    background: #e6f3fb;   /* xanh nhạt */
+    color: #000; /* Chữ đen */
+    font-size: 0.8rem; /* Chữ nhỏ */
+    padding: 2px 8px;  /* Khoảng cách trong (padding) */
+    border: 1px solid #ccc; /* Viền xám nhạt */
+    border-radius: 4px;  /* Bo tròn khung ngày tháng */
+}
+
+/* Tiêu đề bài viết - nền xanh nhạt */
+.baiviet .tieude-baiviet {
+    background: #e6f3fb; /* Nền xanh nhạt */
+    color: #000;  /* Chữ đen */
+    font-size: 0.9rem;  /* Cỡ chữ vừa */
+    font-weight: bold;  /* Chữ in đậm */
+    padding: 8px;  /* Khoảng cách trong */
+    margin: 0; /* Xóa margin mặc định của p */
+    min-height: 60px; /* Chiều cao tối thiểu để các ô bằng nhau */
+    display: flex; /* Dùng flex để căn giữa chữ theo chiều dọc */
+    align-items: center; /* Căn chữ giữa theo chiều cao */
 }
