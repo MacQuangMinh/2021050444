@@ -1,5 +1,215 @@
-::after, ::before{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Reset mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: #f8f9fa;
+  padding: 10px;
+}
+
+/* Menu */
+.danhmuc {
+  background-color: #2fa4e7;
+}
+
+.danhmuc-danhsach {
+  display: flex;
+}
+
+.danhmuc-muc {
+  padding: 14px 16px;
+}
+
+.danhmuc-lienket {
+  color: white;
+  text-decoration: none;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.danhmuc-lienket:hover {
+  color: gray;
+}
+
+/* Layout */
+main {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.left-column {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-column {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Tiêu đề */
+.tieude {
+  background: #2a92d4;
+  color: white;
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+/* Section */
+section {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Tin tức */
+.tintuc-danhsach {
+    display: flex; /* Hiển thị các bài viết nằm ngang */
+    justify-content: space-between; /* Cách đều các bài viết */
+    gap: 10px;
+}
+
+.baiviet img {
+width: 100%; /* Ảnh chiếm toàn chiều ngang */
+    height: 160px; /* Chiều cao ảnh cố định */
+    object-fit: cover; /* Ảnh sẽ cắt/zoom để lấp đầy khung */
+    display: block; /* Hiển thị dạng block (tránh khoảng trắng dư) */
+}
+
+.baiviet .ngay {
+  position: absolute; /* Định vị tuyệt đối so với .baiviet */
+    top: 5px; /* Cách mép trên 5px */
+    right: 5px; /* Cách mép phải 5px */
+    background: #e6f3fb;   /* xanh nhạt */
+    color: #000; /* Chữ đen */
+    font-size: 0.8rem; /* Chữ nhỏ */
+    padding: 2px 8px;  /* Khoảng cách trong (padding) */
+    border: 1px solid #ccc; /* Viền xám nhạt */
+    border-radius: 4px;  /* Bo tròn khung ngày tháng */
+}
+
+.tieude-baiviet {
+  background: #e6f3fb; /* Nền xanh nhạt */
+    color: #000;  /* Chữ đen */
+    font-size: 0.9rem;  /* Cỡ chữ vừa */
+    font-weight: bold;  /* Chữ in đậm */
+    padding: 8px;  /* Khoảng cách trong */
+    margin: 0; /* Xóa margin mặc định của p */
+    min-height: 60px; /* Chiều cao tối thiểu để các ô bằng nhau */
+    display: flex; /* Dùng flex để căn giữa chữ theo chiều dọc */
+    align-items: center; /* Căn chữ giữa theo chiều cao */
+}
+
+/* Thông báo */
+.thongbao-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.thongbao-item img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.thongbao-text a {
+  font-weight: bold;
+  color: #2a92d4;
+  text-decoration: none;
+}
+
+.thongbao-text .date {
+  font-size: 12px;
+  color: gray;
+}
+
+.thongbao-list {
+  list-style: none;
+  padding: 10px;
+}
+
+.thongbao-list li {
+  margin: 5px 0;
+}
+
+.thongbao-list a {
+  color: #2a92d4;
+  text-decoration: none;
+}
+
+.thongbao-list .date {
+  font-size: 12px;
+  color: gray;
+  margin-left: 5px;
+}
+
+/* Hướng dẫn */
+.guide ul {
+  list-style: none;
+  padding: 10px;
+}
+
+.guide li {
+  margin: 5px 0;
+}
+
+.guide a {
+  text-decoration: none;
+  color: #2a92d4;
+}
+
+/* Đăng nhập */
+.login {
+  padding: 15px;
+}
+
+.login input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.login .forgot {
+  font-size: 12px;
+  color: #2a92d4;
+  text-decoration: none;
+}
+
+.login button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 3px;
+  background: #2a92d4;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login button.ms {
+  background: #0078d4;
+}
+
+/* App */
+.app {
+  text-align: center;
+  padding: 15px;
+}
+
+.app img {
+  width: 120px;
 }

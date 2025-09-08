@@ -1,29 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodio</title>
+  <meta charset="UTF-8">
+  <title>Trang Demo HUMG</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="menu">
-        <div class="nav">
-            <div class="nav">
-                <div class="logo"><h1>Food<b>io</b></h1></div>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Gallery</a></li>
-                </ul>
-                <div>
-                    <input class="signin" type="submit" value="Sign In" name="signin">
-                    <input class="signin" type="submit" value="Sign Up" name="signun">
-                </div>
+  <!-- Thanh menu -->
+  <header class="danhmuc">
+    <ul class="danhmuc-danhsach">
+      <li class="danhmuc-muc"><a href="#" class="danhmuc-lienket">Trang chủ</a></li>
+      <li class="danhmuc-muc"><a href="#" class="danhmuc-lienket">Thực tập, Đồ án</a></li>
+      <li class="danhmuc-muc"><a href="#" class="danhmuc-lienket">Thủ tục Một cửa</a></li>
+      <li class="danhmuc-muc"><a href="#" class="danhmuc-lienket">E-mail HUMG</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- Cột trái -->
+    <div class="left-column">
+      <!-- Tin tức -->
+      <section class="news">
+        <h2 class="tieude">Tin tức</h2>
+        <div class="tintuc-danhsach">
+          <article class="baiviet">
+            <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="">
+            <div class="ngay">20/01/2024</div>
+            <h3 class="tieude-baiviet">Hướng dẫn quy trình Thực tập, Đồ án</h3>
+          </article>
+          <article class="baiviet">
+            <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="">
+            <div class="ngay">24/09/2024</div>
+            <h3 class="tieude-baiviet">Trường đạt chuẩn kiểm định chất lượng</h3>
+          </article>
+          <article class="baiviet">
+            <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="">
+            <div class="ngay">26/09/2024</div>
+            <h3 class="tieude-baiviet">Lễ ký kết hợp tác đào tạo và nghiên cứu</h3>
+          </article>
         </div>
-    </section>
+      </section>
+
+      <!-- Thông báo -->
+      <section class="announcement">
+        <h2 class="tieude">Thông báo</h2>
+        <div class="thongbao-item">
+          <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="">
+          <div class="thongbao-text">
+            <a href="#">Về việc nghỉ học</a>
+            <div class="date">29/08/2025 09:06</div>
+          </div>
+        </div>
+        <ul class="thongbao-list">
+          <li><a href="#">Về việc phát bằng tốt nghiệp Đợt 3</a> <span class="date">22/08/2025</span></li>
+          <li><a href="#">Thông báo về việc Thực tập tốt nghiệp</a> <span class="date">14/08/2025</span></li>
+        </ul>
+      </section>
+
+      <!-- Hướng dẫn -->
+      <section class="guide">
+        <h2 class="tieude">Hướng dẫn</h2>
+        <ul>
+          <li><a href="#">Hướng dẫn đăng ký khối lượng học tập</a></li>
+          <li><a href="#">Hướng dẫn lấy lại mật khẩu</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Cột phải -->
+    <div class="right-column">
+      <!-- Đăng nhập -->
+      <section class="login">
+        <h2 class="tieude">Đăng nhập</h2>
+        <form>
+          <input type="text" placeholder="Tên đăng nhập"><br>
+          <input type="password" placeholder="Mật khẩu"><br>
+          <a href="#" class="forgot">Quên mật khẩu</a><br>
+          <button type="submit">Đăng nhập</button>
+          <button type="button" class="ms">Đăng nhập với Microsoft 365</button>
+        </form>
+      </section>
+
+      <!-- App mobile -->
+      <section class="app">
+        <h2 class="tieude">Cài đặt App Mobile</h2>
+        <img src="../image/Logo_Truong_Dai_hoc_Mo_-_Dia_chat (1).jpg" alt="QR App">
+      </section>
+    </div>
+  </main>
 </body>
 </html>
