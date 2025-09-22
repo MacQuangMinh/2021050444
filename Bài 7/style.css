@@ -1,0 +1,143 @@
+/* Reset cơ bản */
+* {
+  margin: 0; /* xóa margin mặc định */
+  padding: 0; /* xóa padding mặc định */
+  box-sizing: border-box; /* tính cả border+padding */
+  font-family: Arial, sans-serif; /* font chữ chung */
+}
+
+/* Body */
+body {
+  background: linear-gradient(#121212, #000); /* nền chuyển đen */
+  color: #fff; /* chữ trắng */
+  min-height: 100vh; /* chiếm full màn hình */
+  display: flex; /* flexbox */
+  flex-direction: column; /* dọc */
+  justify-content: space-between; /* dãn header-main-footer */
+}
+
+/* Header */
+.dau-trang {
+  text-align: center; /* căn giữa */
+  padding: 20px; /* khoảng cách */
+}
+.logo {
+  width: 45px; /* rộng 45px */
+}
+
+/* Nội dung chính */
+.noidung {
+  background-color: #181818; /* nền xám đậm */
+  width: 400px; /* rộng 400px */
+  margin: auto; /* căn giữa */
+  padding: 40px 50px; /* khoảng cách trong */
+  border-radius: 10px; /* bo góc */
+  text-align: center; /* căn giữa chữ */
+}
+.noidung h2 {
+  margin-bottom: 25px; /* cách dưới */
+}
+
+/* Nhóm nút MXH */
+.nut-xahoi-group {
+  margin-bottom: 20px; /* cách dưới */
+}
+.nut-xahoi {
+  display: flex; /* icon + chữ ngang */
+  align-items: center; /* giữa dọc */
+  justify-content: center; /* giữa ngang */
+  gap: 10px; /* cách icon-chữ */
+  width: 100%; /* full ngang */
+  padding: 12px; /* khoảng trong */
+  margin-bottom: 10px; /* cách nút */
+  border-radius: 30px; /* bo tròn */
+  border: 1px solid #ccc; /* viền xám */
+  background: transparent; /* trong suốt */
+  color: #fff; /* chữ trắng */
+  font-weight: bold; /* chữ đậm */
+  cursor: pointer; /* chuột nhấn */
+  transition: background 0.2s; /* hiệu ứng */
+}
+.nut-xahoi:hover {
+  background: #333; /* hover xám */
+}
+.nut-xahoi img {
+  width: 18px; /* icon nhỏ */
+  height: 18px;
+}
+
+/* Đường kẻ */
+hr {
+  border: 0; /* bỏ viền mặc định */
+  border-top: 1px solid #333; /* kẻ ngang xám */
+  margin: 25px 0; /* cách trên dưới */
+}
+
+/* Form */
+.nhom-input {
+  text-align: left; /* chữ trái */
+  margin-bottom: 20px; /* cách dưới */
+}
+.nhom-input label {
+  font-size: 13px; /* chữ nhỏ */
+  display: block; /* 1 dòng */
+  margin-bottom: 6px; /* cách input */
+}
+.nhom-input input {
+  width: 100%; /* full ngang */
+  padding: 12px; /* trong */
+  border: 1px solid #555; /* viền xám đậm */
+  border-radius: 5px; /* bo nhẹ */
+  background: #121212; /* nền đen */
+  color: #fff; /* chữ trắng */
+}
+
+/* Nút tiếp tục */
+.nut-tieptuc {
+  width: 100%; /* full ngang */
+  padding: 14px; /* cao */
+  border: none; /* ko viền */
+  border-radius: 30px; /* bo tròn */
+  background-color: #1ed760; /* xanh Spotify */
+  color: #000; /* chữ đen */
+  font-weight: bold; /* đậm */
+  font-size: 15px; /* chữ vừa */
+  cursor: pointer; /* nhấn */
+  transition: transform 0.1s; /* hiệu ứng */
+}
+.nut-tieptuc:hover {
+  transform: scale(1.02); /* phóng to nhẹ */
+}
+
+/* Đăng ký */
+.dangky {
+  margin-top: 25px; /* cách trên */
+  font-size: 14px; /* chữ nhỏ */
+  color: #aaa; /* xám nhạt */
+}
+.dangky a {
+  color: #fff; /* link trắng */
+  text-decoration: underline; /* gạch chân */
+  font-weight: bold; /* đậm */
+}
+
+/* Footer */
+.chan-trang {
+  text-align: center; /* giữa chữ */
+  font-size: 13px; /* nhỏ */
+  color: #aaa; /* xám nhạt */
+  padding: 20px; /* trong */
+}
+.chan-trang a {
+  color: #fff; /* link trắng */
+  text-decoration: none; /* bỏ gạch */
+  margin: 0 5px; /* cách link */
+}
+.chan-trang a:hover {
+  text-decoration: underline; /* hover gạch chân */
+}
+.banquyen {
+  margin-top: 10px; /* cách trên */
+  font-size: 12px; /* nhỏ hơn */
+  color: #666; /* xám đậm */
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Facebook – Đăng ký</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dangky-container">
+    <h1 class="logo">facebook</h1>
+    <div class="form-dangky">
+      <h2>Tạo tài khoản mới</h2>
+      <p>Nhanh chóng và dễ dàng.</p>
+      <form>
+        <!-- Họ và Tên -->
+        <div class="row">
+          <input type="text" placeholder="Họ" required>
+          <input type="text" placeholder="Tên" required>
+        </div>
+
+        <!-- Ngày sinh -->
+        <label class="label">Ngày sinh</label>
+        <div class="row">
+          <select required>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+          </select>
+          <select required>
+            <option>Tháng 9</option>
+            <option>Tháng 10</option>
+          </select>
+          <select required>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+        </div>
+
+        <!-- Giới tính -->
+        <label class="label">Giới tính</label>
+        <div class="row">
+          <label class="radio"><input type="radio" name="gioitinh"> Nữ</label>
+          <label class="radio"><input type="radio" name="gioitinh"> Nam</label>
+          <label class="radio"><input type="radio" name="gioitinh"> Tùy chỉnh</label>
+        </div>
+
+        <!-- Email và mật khẩu -->
+        <input type="text" placeholder="Số di động hoặc email" required>
+        <input type="password" placeholder="Mật khẩu mới" required>
+
+        <!-- Chú thích -->
+        <p class="chuthich">
+          Những người dùng dịch vụ của chúng tôi có thể đã tải thông tin liên hệ của bạn lên Facebook. 
+          <a href="#">Tìm hiểu thêm.</a>
+        </p>
+        <p class="chuthich">
+          Bằng cách nhấp vào Đăng ký, bạn đồng ý với 
+          <a href="#">Điều khoản</a>, 
+          <a href="#">Chính sách quyền riêng tư</a> 
+          và 
+          <a href="#">Chính sách cookie</a> của chúng tôi.
+        </p>
+
+        <!-- Nút -->
+        <button type="submit" class="nut-dangky">Đăng ký</button>
+
+        <p class="daco">Bạn đã có tài khoản ư?</p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

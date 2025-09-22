@@ -1,0 +1,81 @@
+body{
+    margin: 0; /* Xóa khoảng cách mặc định ngoài (margin) */
+    padding: 0; /* Xóa khoảng cách mặc định trong (padding) */
+    font-family: 'Times New Roman', Times, serif; /* Font chữ chính */
+}
+
+ul{
+    list-style-type: none; /* Bỏ dấu chấm đầu dòng mặc định của ul */
+    margin: 0; /* Xóa margin mặc định */
+    padding: 0; /* Xóa padding mặc định */
+    overflow: hidden; /* Nếu có phần tử con tràn ra thì ẩn đi */
+}
+
+.danhmuc{
+    background-color: white; /* Nền xanh của thanh menu */
+}
+
+.danhmuc-danhsach{
+    display: flex; /* Dùng flex để sắp xếp các mục menu theo hàng ngang */
+    list-style: none; /* Bỏ dấu chấm đầu dòng */
+}
+
+.danhmuc-muc{
+    float: left; /* Cho các mục menu nằm ngang (không cần thiết khi đã dùng flex) */
+    padding: 14px 16px; /* Khoảng cách trong của từng mục menu */
+    text-align: center; /* Căn giữa chữ theo chiều ngang */
+}
+
+.danhmuc-lienket{
+    color: black; /* Chữ màu trắng */
+    text-decoration: none; /* Bỏ gạch chân mặc định của link */
+    font-size: larger; /* Kích thước chữ lớn hơn */
+    font-weight: bold; /* In đậm chữ */
+}
+
+.danhmuc-lienket:hover {  
+    color: gray; /* Khi rê chuột vào link thì đổi màu chữ thành xám */
+}
+
+
+main{
+    display: flex; /* Chia main thành 2 cột (trái và phải) */
+}
+
+
+.noidung-trai {
+    height: 1000px; /* Chiều cao khối nội dung bên trái */
+    background-color:white; /* Nền xanh nhạt để dễ phân biệt */
+    width: 30%; /* Chiếm 80% chiều ngang trang */
+    border-radius: 10px 10px 0px 0px; /* Bo tròn góc trên trái và phải */
+}
+
+.List-lienket{
+    list-style: none; /* bỏ chấm */
+    padding: 0; /* bỏ padding mặc định */
+    gap: 20px; /* khoảng cách giữa li */
+    background-color: aquamarine;
+}
+.noidung-phai {
+    height: 1000px; /* Chiều cao khối nội dung bên phải */
+    background-color: white;  /* Nền màu nâu */
+    width: 70%; /* Chiếm 20% chiều ngang trang */
+}
+
+.nut-tieptuc{ 
+    width: 100%; /* full ngang */
+    padding: 14px; /* cao */
+    border: none; /* ko viền */
+    border-radius: 30px; /* bo tròn */
+    background-color: black; /* xanh Spotify */
+    color: white; /* chữ đen */
+    font-weight: bold; /* đậm */
+    font-size: 15px; /* chữ vừa */
+    cursor: pointer; /* nhấn */
+    transition: transform 0.1s; /* hiệu ứng */
+}
+
+
+
+
+

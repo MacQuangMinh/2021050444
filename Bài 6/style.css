@@ -1,0 +1,84 @@
+body{
+    margin: 0; /* bỏ khoảng cách mặc định ngoài body */
+}
+
+.header-container {
+    display: flex; /* dùng flexbox để xếp ngang */
+    justify-content: space-between; /* logo bên trái, menu bên phải */
+    background-color: black; /* nền đen */
+    width: 70%; /* chiếm 70% chiều rộng trang */
+    margin: auto; /* căn giữa container */
+}
+
+.danhmuc{
+    display: flex; /* xếp ngang menu */
+    align-items: center; /* căn giữa theo chiều dọc */
+    gap: 20px; /* khoảng cách giữa các item */
+    padding: 10px 0 ; /* khoảng cách trên dưới */
+}
+
+.Logo{
+    width: 15%; /* logo chiếm 15% container */
+}
+
+ul{
+    list-style: none; /* bỏ dấu chấm mặc định */
+    display: flex; /* xếp các li ngang */
+    padding: 0; /* bỏ padding mặc định */
+    gap: 20px; /* cách giữa các li */
+}
+
+a{
+    color: gray; /* màu chữ xám */
+    text-decoration: none; /* bỏ gạch chân */
+    font-weight: 500; /* chữ vừa đậm */
+    color: #9b9b9b; /* màu xám nhạt */
+    font-size: 16px; /* cỡ chữ 16px */
+    font-family: "SFProDisplay", Arial, sans-serif; /* font chữ giống Apple */
+}
+
+/* Hover = khi di chuột vào link */
+a:hover {
+    color: orange; /* đổi thành cam */
+}
+
+.Chucnang {
+    display: flex; /* xếp ngang */
+    align-items: center; /* căn giữa dọc */
+    gap: 20px; /* cách các nút */
+}
+
+.muagoi {
+    background-color: orange; /* nền cam */
+    border: none; /* bỏ viền */
+    color: white; /* chữ trắng */
+    padding: 10px 20px; /* khoảng cách trong */
+    width: 100px; /* chiều rộng cố định */
+    border-radius: 10px; /* bo góc */
+}
+
+.dangnhap {
+    background-color: black; /* nền đen */
+    color: white; /* chữ trắng */
+    border: none; /* bỏ viền */
+    width: 100px; /* rộng 100px */
+}
+
+main{
+    background-color: #131314; /* nền xám đen */
+    color: white; /* chữ trắng */
+    width: 100%; /* full chiều ngang */
+    height: 1000px; /* cao cố định 1000px */
+}
+
+.quangcao{
+    display: flex; /* flexbox */
+    justify-content: center; /* căn giữa ngang */
+}
+
+.container {
+    width: 70%; /* khối chính chiếm 70% ngang */
+    background-color: black; /* nền đen */
+    height: 1000px; /* cao 1000px */
+    margin: auto; /* căn giữa */
+}

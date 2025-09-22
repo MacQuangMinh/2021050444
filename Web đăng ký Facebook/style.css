@@ -1,0 +1,124 @@
+/* Reset */
+* {
+  margin: 0;  /* bỏ khoảng cách ngoài mặc định */
+  padding: 0; /* bỏ khoảng cách trong mặc định */
+  box-sizing: border-box; /* tính kích thước gồm cả border, padding */
+  font-family: Helvetica, Arial, sans-serif; /* font mặc định */
+}
+
+body {
+  background-color: #f0f2f5; /* nền xám nhạt */
+}
+
+/* Khung chính */
+.dangky-container {
+  text-align: center; /* căn giữa chữ */
+  padding: 40px 0; /* khoảng cách trên dưới */
+}
+
+.logo {
+  font-size: 55px; /* chữ rất to */
+  color: #1877f2; /* xanh Facebook */
+  font-weight: bold; /* in đậm */
+  margin-bottom: 20px; /* cách dưới */
+}
+
+.form-dangky {
+  background: #ffffff; /* nền trắng */
+  width: 430px; /* chiều ngang form */
+  margin: auto; /* căn giữa */
+  padding: 20px; /* khoảng cách trong */
+  border-radius: 8px; /* bo tròn góc */
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2); /* đổ bóng nhẹ */
+  text-align: left; /* chữ căn trái */
+}
+
+.form-dangky h2 {
+  font-size: 24px; /* tiêu đề lớn */
+  margin-bottom: 5px; /* cách dưới */
+}
+
+.form-dangky p {
+  font-size: 14px; /* chữ nhỏ hơn */
+  color: #606770; /* xám nhạt */
+  margin-bottom: 15px; /* cách dưới */
+}
+
+/* Form */
+.row {
+  display: flex; /* xếp input ngang */
+  gap: 10px; /* khoảng cách giữa input */
+  margin-bottom: 12px; /* cách dưới */
+}
+
+.row input, .row select {
+  flex: 1; /* input chia đều */
+}
+
+input, select {
+  width: 100%; /* full khung */
+  padding: 12px; /* khoảng cách trong */
+  border: 1px solid #ccd0d5; /* viền xám nhạt */
+  border-radius: 6px; /* bo góc */
+  font-size: 15px; /* cỡ chữ */
+  margin-bottom: 12px; /* cách dưới */
+}
+
+/* Label */
+.label {
+  font-size: 12px; /* chữ nhỏ */
+  color: #606770; /* xám */
+  margin-bottom: 5px; /* cách dưới */
+  display: block; /* xuống dòng riêng */
+}
+
+/* Radio */
+.radio {
+  flex: 1; /* chiếm đều trong row */
+  border: 1px solid #ccd0d5; /* viền xám */
+  padding: 8px; /* khoảng cách trong */
+  border-radius: 6px; /* bo tròn */
+  font-size: 14px; /* cỡ chữ */
+}
+
+/* Chú thích */
+.chuthich {
+  font-size: 11px; /* chữ rất nhỏ */
+  color: #777; /* xám nhạt */
+  margin-bottom: 10px; /* cách dưới */
+}
+.chuthich a {
+  color: #385898; /* xanh Facebook */
+  text-decoration: none; /* bỏ gạch chân */
+}
+.chuthich a:hover {
+  text-decoration: underline; /* hover gạch chân */
+}
+
+/* Nút */
+.nut-dangky {
+  width: 100%; /* full chiều ngang */
+  padding: 12px; /* khoảng cách trong */
+  background-color: #42b72a; /* xanh lá */
+  border: none; /* bỏ viền */
+  border-radius: 6px; /* bo góc */
+  color: white; /* chữ trắng */
+  font-size: 18px; /* chữ lớn */
+  font-weight: bold; /* đậm */
+  cursor: pointer; /* hiện bàn tay */
+  margin: 10px 0; /* cách trên dưới */
+}
+.nut-dangky:hover {
+  background-color: #36a420; /* hover xanh đậm hơn */
+}
+
+/* Link dưới */
+.daco {
+  text-align: center; /* căn giữa */
+  font-size: 14px; /* cỡ chữ */
+  color: #1877f2; /* xanh Facebook */
+  cursor: pointer; /* hiện bàn tay */
+}
+.daco:hover {
+  text-decoration: underline; /* hover có gạch chân */
+}

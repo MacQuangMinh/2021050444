@@ -1,0 +1,50 @@
+body {
+    margin: 0; /* bỏ khoảng trống mặc định ngoài body */
+}
+
+header {
+    background-color:white /* nền header màu trắng */
+}
+
+.header-container {
+    display: flex; /* dùng flexbox để canh ngang */
+    justify-content: space-between; /* logo trái, menu phải */
+    background-color: white; /* nền đen */
+    width: 70%; /* chiều rộng 70% */
+    margin: auto; /* căn giữa */
+}
+
+
+main {
+    background-color: white;
+    width: 70%; /* chiều rộng 70% */
+    margin: auto; /* căn giữa */
+}
+
+.danhmuc {
+    display: flex; /* xếp ngang */
+    align-items: center; /* căn giữa dọc */
+    gap: 20px; /* khoảng cách item */
+    padding: 10px 0; /* trên dưới 10px */
+}
+
+.chucnang {
+    display: flex; /* xếp ngang */
+    align-items: center; /* căn giữa dọc */
+    gap: 20px; /* khoảng cách item */
+    padding: 10px 0; /* trên dưới 10px */
+    border-radius: 12px;
+}
+
+.noidung-trai{
+    height: 1000px; /* Chiều cao khối nội dung bên trái */
+    background-color: white; /* Nền xanh nhạt để dễ phân biệt */
+    width: ; /* Chiếm 20% chiều ngang trang */
+    border-radius: 10px 10px 0px 0px; /* Bo tròn góc trên trái và phải */
+}
+
+.noidung-phai{
+    height: 1000px; /* Chiều cao khối nội dung bên phải */
+    background-color: white;  /* Nền màu nâu */
+    width: ; /* Chiếm 80% chiều ngang trang */
+}

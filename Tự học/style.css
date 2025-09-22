@@ -22,6 +22,7 @@ body {
 
 .danhmuc-muc {
   padding: 14px 16px;
+  list-style: none;
 }
 
 .danhmuc-lienket {
@@ -33,6 +34,8 @@ body {
 
 .danhmuc-lienket:hover {
   color: gray;
+  font-weight: bold;
+
 }
 
 /* Layout */
@@ -111,49 +114,12 @@ width: 100%; /* Ảnh chiếm toàn chiều ngang */
 }
 
 /* Thông báo */
-.thongbao-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+.cottrai{
+  width:30%;
 }
-
-.thongbao-item img {
-  width: 80px;
-  margin-right: 10px;
+.cotphai{
+  width:70%;
 }
-
-.thongbao-text a {
-  font-weight: bold;
-  color: #2a92d4;
-  text-decoration: none;
-}
-
-.thongbao-text .date {
-  font-size: 12px;
-  color: gray;
-}
-
-.thongbao-list {
-  list-style: none;
-  padding: 10px;
-}
-
-.thongbao-list li {
-  margin: 5px 0;
-}
-
-.thongbao-list a {
-  color: #2a92d4;
-  text-decoration: none;
-}
-
-.thongbao-list .date {
-  font-size: 12px;
-  color: gray;
-  margin-left: 5px;
-}
-
 /* Hướng dẫn */
 .guide ul {
   list-style: none;

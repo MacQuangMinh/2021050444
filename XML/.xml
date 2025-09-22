@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BookOrder>
+    <OrderDate>2025-09-18</OrderDate>
+    
+    <Customer>
+        <Title>Mr.</Title>
+        <FirstName>Nguyen</FirstName>
+        <LastName>Minh</LastName>
+    </Customer>
+    
+    <Book>
+        <Title>Learning XML</Title>
+        <Author>John Doe</Author>
+    </Book>
+</BookOrder>

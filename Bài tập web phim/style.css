@@ -1,0 +1,230 @@
+body {
+    margin: 0; /* bỏ khoảng trống mặc định ngoài body */
+}
+
+header {
+    background-color: black; /* nền header màu đen */
+}
+
+.header-container {
+    display: flex; /* dùng flexbox để canh ngang */
+    justify-content: space-between; /* logo trái, menu phải */
+    background-color: black; /* nền đen */
+    width: 70%; /* chiều rộng 70% */
+    margin: auto; /* căn giữa */
+}
+
+.danhmuc {
+    display: flex; /* xếp ngang */
+    align-items: center; /* căn giữa dọc */
+    gap: 20px; /* khoảng cách item */
+    padding: 10px 0; /* trên dưới 10px */
+}
+
+.logo {
+    width: 15%; /* logo chiếm 15% */
+}
+
+ul {
+    list-style: none; /* bỏ chấm */
+    display: flex; /* xếp li ngang */
+    padding: 0; /* bỏ padding mặc định */
+    gap: 20px; /* khoảng cách giữa li */
+}
+
+a {
+    text-decoration: none; /* bỏ gạch chân */
+    font-weight: bolder; /* chữ đậm */
+    color: #9b9b9b; /* xám nhạt */
+    font-size: 16px; /* cỡ chữ */
+    font-family: "SFProDisplay", Arial, sans-serif; /* font giống Apple */
+}
+
+a:hover {
+    color: orange; /* di chuột vào đổi thành cam */
+}
+
+.chucnang {
+    display: flex; /* nút xếp ngang */
+    align-items: center; /* căn giữa dọc */
+    gap: 20px; /* cách nhau */
+}
+
+.muagoi {
+    background-color: orange; /* nền cam */
+    border: none; /* bỏ viền */
+    color: white; /* chữ trắng */
+    padding: 10px 20px; /* khoảng cách trong */
+    width: 100px; /* rộng 100px */
+    border-radius: 10px; /* bo tròn */
+}
+
+.dangnhap {
+    background-color: black; /* nền đen */
+    color: white; /* chữ trắng */
+    border: none; /* bỏ viền */
+    width: 100px; /* rộng 100px */
+}
+
+main {
+    background-color: #131314; /* nền xám đen */
+    color: white; /* chữ trắng */
+    width: 100%; /* full chiều ngang */
+}
+
+.quangcao {
+    display: flex; /* flexbox */
+    justify-content: center; /* căn giữa ngang */
+}
+
+.container {
+    width: 70%; /* khung chính chiếm 70% */
+    background-color: black; /* nền đen */
+    margin: auto; /* căn giữa */
+}
+
+.banner {
+    width: 98%; /* banner gần full */
+}
+
+.qc {
+    margin-top: 10px; /* cách trên 10px */
+    width: 98%; /* rộng gần full */
+    border-radius: 10px; /* bo góc */
+}
+
+.tentheloai {
+    margin: 20px; /* khoảng cách ngoài */
+    font-size: 24px; /* chữ lớn */
+    font-weight: bold; /* chữ đậm */
+    color: #fff; /* trắng */
+    margin: 20px 0 10px; /* cách trên/dưới */
+}
+
+.danhsach {
+    display: flex; /* flexbox */
+    justify-content: space-evenly; /* chia đều item */
+    margin-top: 20px; /* cách trên */
+}
+
+.phim {
+    width: 19%; /* mỗi phim chiếm 19% ngang */
+}
+
+.phim img {
+    width: 100%; /* full khung */
+    border-radius: 12px; /* bo tròn */
+    overflow: hidden; /* tránh tràn góc */
+    transition: transform 0.3s ease; /* hiệu ứng hover */
+}
+
+.phim img:hover {
+    transform: scale(1.05); /* phóng to nhẹ khi hover */
+}
+
+.chantrang {
+  background: #111; /* nền xám đen */
+  color: #ddd; /* chữ xám nhạt */
+  padding: 40px 20px; /* khoảng cách trong */
+  font-family: Arial, sans-serif; /* font chữ */
+}
+
+.khungchantrang {
+    max-width: 1200px; /* khung rộng tối đa */
+    margin: auto; /* căn giữa */
+}
+
+.hangtren {
+  display: flex; /* flexbox */
+  align-items: center; /* căn giữa dọc */
+  justify-content: flex-start; /* căn trái */
+  gap: 20px; /* khoảng cách */
+  margin-bottom: 30px; /* cách dưới */
+}
+
+.logofooter {
+  height: 40px; /* logo footer cao 40px */
+  list-style: none; 
+  padding: 0; 
+  margin: 0;
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.chungnhan img {
+  height: 40px; /* ảnh chứng nhận cao 40px */
+  margin-right: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cotfooter {
+  display: grid; /* lưới */
+  grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+  gap: 30px; /* khoảng cách */
+  margin-bottom: 30px; /* cách dưới */
+  align-items: flex-start; /* căn trên */
+}
+
+.cot h4 {
+  color: #fff; /* tiêu đề trắng */
+  margin-bottom: 15px; 
+  font-size: 16px;
+}
+
+.cot ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cot ul li {
+  margin: 6px 0;
+}
+
+.cot ul li a {
+  text-decoration: none;
+  color: #bbb; /* xám nhạt */
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.cot ul li a:hover {
+  color: #ff6600; /* hover thành cam */
+}
+
+.cot p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.mxh {
+  margin-top: 10px;
+}
+
+.mxh a img {
+  width: 24px; /* icon 24px */
+  margin-right: 10px;
+  filter: brightness(0) invert(1); /* biến icon thành trắng */
+  transition: 0.3s;
+}
+
+.mxh a img:hover {
+  filter: none; /* hiện màu gốc khi hover */
+}
+
+.chantrangduoi {
+  font-size: 12px; /* chữ nhỏ */
+  color: #888; /* xám nhạt */
+  border-top: 1px solid #333; /* kẻ trên */
+  padding-top: 15px; /* cách trên */
+  line-height: 1.6; /* giãn dòng thoáng */
+}
