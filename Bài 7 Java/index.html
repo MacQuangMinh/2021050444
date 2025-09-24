@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Cơ Bản</title>
 </head>
 <body>
-    <!--
-    var và let dùng để khai báo biến
-    + <br> để xuống dòng
-    Cú pháp: let + tên_biến = giá_trị;
-    Cú pháp: var + tên_biến = giá_trị;
-    Để nối chuỗi JS ta dùng dấu cộng (+)
-    Phép cộng (+)
-    Phép trừ (-)
-    Phép nhân (*)
-    Phép chia (/)
-    Phép chia lấy dư (%)
-    Phép tăng 1 (++)
-    Phép giảm 1 (--)
-    Phép gán (=)
-    Phép gán cộng (+=)
-    Phép gán trừ (-=)
-    Phép gán nhân (*=)
-    Phép gán chia (/=)
-    Phép gán chia lấy dư (%=)
-    Phép so sánh (==, ===, !=, !==, >, <, >=, <=)
-    Phép logic (&&, ||, !)
-    === So sánh giá trị và kiểu dữ liệu
-    == So sánh giá trị, không so sánh kiểu dữ liệu
-    !== So sánh giá trị và kiểu dữ liệu không bằng nhau
-    != So sánh giá trị không bằng nhau
-    -->
-    <script>
-        document.writeln("Hello World!  <br>");
-        var tuoi = 20 + "<br>";
-        document.writeln(tuoi);
-        let hoTen = "Nguyen Van A <br>";
-        document.writeln(hoTen);
+  <script>
+    // 1. Xuất ra màn hình dòng chữ
+    document.writeln("Hello World! <br>");
 
-        let soThuNhat=10;
-        let soThuHai=5;
-        let ketQua;
-        //++ketQua;
-        //--ketQua; 
-        //ketQua = soThuNhat / soThuHai;
+    // 2. Khai báo biến (cách cũ và mới)
+    var tuoi = 20;                 // var: khai báo kiểu cũ
+    let hoTen = "Nguyen Van A";    // let: khai báo kiểu mới
+    document.writeln("Tuổi: " + tuoi + "<br>");
+    document.writeln("Họ tên: " + hoTen + "<br>");
 
-        soThuNhat += soThuHai; // soThuNhat = soThuNhat + soThuHai;
-        //soThuNhat -= soThuHai; // soThuNhat = soThuNhat - soThuHai;
-        //soThuNhat *= soThuHai; // soThuNhat = soThuNhat * soThuHai;
-        //soThuNhat /= soThuHai; // soThuNhat = soThuNhat / soThuHai;
-        //soThuNhat %= soThuHai; // soThuNhat = soThuNhat % soThuHai;
+    // 3. Toán tử số học
+    let soThuNhat = 10;
+    let soThuHai = 5;
 
+    let tong = soThuNhat + soThuHai;  // cộng
+    let hieu = soThuNhat - soThuHai;  // trừ
+    let tich = soThuNhat * soThuHai;  // nhân
+    let thuong = soThuNhat / soThuHai;// chia
+    let du = soThuNhat % soThuHai;    // chia lấy dư
 
-        let thongTinSinhVien = {
-            hoTen: "Mac Quang MInh",
-            tuoi: 22,
-            mssv: "2021050444",
-            lop: "DCCTCT67_06A"
-        }
+    document.writeln("Tổng = " + tong + "<br>");
+    document.writeln("Hiệu = " + hieu + "<br>");
+    document.writeln("Tích = " + tich + "<br>");
+    document.writeln("Thương = " + thuong + "<br>");
+    document.writeln("Dư = " + du + "<br>");
 
-        let diaChi = {
-            thanhPho: "Lạng Sơn",
-            phuong: "Mai pha",
-            duong:"ABC",
-            soNha:"123"
-        }
-        
-        let namNay=2025;
-        let namSinh=namNay - thongTinSinhVien.tuoi;
-        document.writeln("Nam sinh cua ban la: " + namSinh + "<br>");
+    // 4. Toán tử gán rút gọn
+    soThuNhat += soThuHai; // tương đương: soThuNhat = soThuNhat + soThuHai
+    document.writeln("Sau khi += : " + soThuNhat + "<br>");
 
-        thongTinSinhVien.diaChi = diaChi;
+    // 5. Đối tượng (Object) cơ bản
+    let thongTinSinhVien = {
+      hoTen: "Mac Quang Minh",  // thuộc tính: giá trị
+      tuoi: 22,
+      mssv: "2021050444",
+      lop: "DCCTCT67_06A"
+    };
 
-        document.writeln("Xin chao ban" + thongTinSinhVien.hoTen + thongTinSinhVien.tuoi + "tuổi" + "<br>" + thongTinSinhVien.diaChi.phuong + "<br>" + thongTinSinhVien.diaChi.thanhPho);
-    </script>
+    // 6. Đối tượng lồng nhau (object trong object)
+    let diaChi = {
+      thanhPho: "Lạng Sơn",
+      phuong: "Mai Pha",
+      duong: "ABC",
+      soNha: "123"
+    };
+
+    // Thêm object địa chỉ vào trong object sinh viên
+    thongTinSinhVien.diaChi = diaChi;
+
+    // 7. Tính toán từ dữ liệu object
+    let namNay = 2025;
+    let namSinh = namNay - thongTinSinhVien.tuoi;
+    document.writeln("Năm sinh: " + namSinh + "<br>");
+
+    // 8. In toàn bộ thông tin sinh viên
+    document.writeln(
+      "Xin chào bạn " + thongTinSinhVien.hoTen + 
+      ", " + thongTinSinhVien.tuoi + " tuổi" + "<br>" +
+      "Địa chỉ: " + thongTinSinhVien.diaChi.soNha + " " + 
+      thongTinSinhVien.diaChi.duong + ", " + 
+      thongTinSinhVien.diaChi.phuong + ", " + 
+      thongTinSinhVien.diaChi.thanhPho
+    );
+  </script>
 </body>
 </html>
