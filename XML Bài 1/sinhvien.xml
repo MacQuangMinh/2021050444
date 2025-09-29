@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SinhVien xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="xml_bai1.xsd">
+
+  <MSSV>2021050</MSSV>
+  <HoTen>Nguyen Van A</HoTen>
+  <Lop>KHMT62</Lop>
+
+  <MonHoc>
+    <MaMon>CS01</MaMon>
+    <TenMon>Co so du lieu</TenMon>
+    <SoTinChi>3</SoTinChi>
+    <Diem>8.5</Diem>
+  </MonHoc>
+
+  <MonHoc>
+    <MaMon>WD02</MaMon>
+    <TenMon>Lap trinh Web</TenMon>
+    <SoTinChi>4</SoTinChi>
+    <Diem>9</Diem>
+  </MonHoc>
+
+</SinhVien>

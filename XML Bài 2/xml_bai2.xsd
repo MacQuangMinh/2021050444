@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="DonHang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="MaKH" type="xs:string"/>
+        <xs:element name="TenKH" type="xs:string"/>
+        <xs:element name="DiaChi">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <!-- Địa chỉ bắt đầu bằng số nhà + tên đường -->
+              <xs:pattern value="[0-9]+ [A-Za-z ]+"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="MatHang" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaMH">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[A-Z]{2}[0-9]{2}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenMH" type="xs:string"/>
+              <xs:element name="SoLuong">
+                <xs:simpleType>
+                  <xs:restriction base="xs:positiveInteger"/>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DonGia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minExclusive value="0"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

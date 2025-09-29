@@ -1,103 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài 8</title>
-    <script src="scrip.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 8 - JavaScript Object & String</title>
 </head>
 <body>
-    <script>
-//    (Object) 
-let thongTinDonHang = {
-            maDonHang: "12345678",
-            thongTinKhachHang: {
-                hoTen: "MinhHieu",
-                soDienThoai: "0987654321",
-                trangThaiThanhVienThanThiet: false,
-            },
-            danhSachSanPham: {
-                sp01: {
-                    maSanPham: "1",
-                    tenSanPham: "Matcha",
-                    soLuong: 10,
-                    giaTien: "10000",
-                },
-                sp02: {
-                    maSanPham: "2",
-                    tenSanPham: "Cà phê",
-                    soLuong: 10,
-                    giaTien: "20000",
-                },
-                sp03: {
-                    maSanPham: "3",
-                    tenSanPham: "Trà sữa",
-                    soLuong: 15,
-                    giaTien: "20000",
-                }
-            },
-            thanhToanThanhCong: true,
-            diaChiGiaoHang: "Đông Ngạc"
+  <script>
+    // 1. Tạo một object mô phỏng đơn hàng
+    let thongTinDonHang = {
+      maDonHang: "12345678", // mã đơn hàng
+      thongTinKhachHang: {
+        hoTen: "MinhHieu", // tên khách
+        soDienThoai: "0987654321", // số điện thoại
+        trangThaiThanhVienThanThiet: false, // có phải khách hàng thân thiết không
+      },
+      danhSachSanPham: { // danh sách sản phẩm mua
+        sp01: {
+          maSanPham: "1",
+          tenSanPham: "Matcha",
+          soLuong: 10,
+          giaTien: "10000", // chuỗi dạng số
+        },
+        sp02: {
+          maSanPham: "2",
+          tenSanPham: "Cà phê",
+          soLuong: 10,
+          giaTien: "20000",
+        },
+        sp03: {
+          maSanPham: "3",
+          tenSanPham: "Trà sữa",
+          soLuong: 15,
+          giaTien: "20000",
         }
-        let tongSP1 = thongTinDonHang.danhSachSanPham.sp01.giaTien * thongTinDonHang.danhSachSanPham.sp01.soLuong;
-        let tongSP2 = thongTinDonHang.danhSachSanPham.sp02.giaTien * thongTinDonHang.danhSachSanPham.sp02.soLuong;
-        let tongSP3 = thongTinDonHang.danhSachSanPham.sp03.giaTien * thongTinDonHang.danhSachSanPham.sp03.soLuong;
+      },
+      thanhToanThanhCong: true, // trạng thái đơn
+      diaChiGiaoHang: "Đông Ngạc" // địa chỉ
+    };
 
-        let tongTien = tongSP1 + tongSP2 + tongSP3;
-        // document.writeln("Tong tien don hang = " + tongTien);
-        // Hien thi tong tien
+    // 2. Tính tổng tiền từng sản phẩm
+    let tongSP1 = thongTinDonHang.danhSachSanPham.sp01.giaTien * thongTinDonHang.danhSachSanPham.sp01.soLuong;
+    let tongSP2 = thongTinDonHang.danhSachSanPham.sp02.giaTien * thongTinDonHang.danhSachSanPham.sp02.soLuong;
+    let tongSP3 = thongTinDonHang.danhSachSanPham.sp03.giaTien * thongTinDonHang.danhSachSanPham.sp03.soLuong;
 
-        // document.writeln("Do dai cua ma don hang = " + thongTinDonHang.maDonHang.length);
-        // Hien thi do dai ma don hang 
-        
-        // document.writeln(myString[4])
-        // Hien ten tung ky tu
+    // 3. Tính tổng tiền toàn bộ đơn
+    let tongTien = tongSP1 + tongSP2 + tongSP3;
+    document.writeln("Tổng tiền đơn hàng = " + tongTien + "<br>");
 
-        // var myString ="Hello"
-        // document.writeln(myString.slice(1, 2))
+    // 4. Độ dài chuỗi (mã đơn hàng)
+    document.writeln("Độ dài của mã đơn hàng = " + thongTinDonHang.maDonHang.length + "<br>");
 
-        // var myString ="Hello"
-        // document.writeln(myString.replace("Hello", "Hi"))
+    // 5. Làm việc với chuỗi
+    var myString = "Hello Minh";
 
-        // chuyen doi chu Hoa, chu Thuong
-        // var myString ="Hello Minh"
-        // document.writeln(myString.toUpperCase());
-        // toLocaleLowerCase(viet thuong)
-        // toUpperCase(VIET HOA)
-        
-        // kiem tra xem trong do co ky tu nay khong, co thi la true, khong co thi la fales
-        // document.writeln(myString.includes('i'));
+    // Lấy ký tự (vị trí 4)
+    document.writeln("Ký tự thứ 5 trong chuỗi: " + myString[4] + "<br>");
 
-        // Tach chuoi thanh mang
-        // document.writeln(myString.split(''));
-        // neu trong dau ngoac khong co phan tu gi no se tu dong gap dau cach se chem thanh mang
+    // Cắt chuỗi slice(start, end)
+    document.writeln("Cắt chuỗi slice(1,2): " + myString.slice(1, 2) + "<br>");
 
-        // let danhSach = ["Pham Van A", "Nguyen Van B", "Hoang Thi C", "To Thi D"]
-        // document.writeln(danhSach[1].startsWith("Nguyen"))
+    // Thay thế chuỗi
+    document.writeln("Replace: " + myString.replace("Hello", "Hi") + "<br>");
 
-        // Chuyển chuỗi về số
-        // let so = "123";
-        // document.writeln(typeof (so));
-        // document.writeln(typeof (Number(so)));
-        // parentInt là chuyển đổi thành chuỗi số nguyên
-        // parseFloat là chuyển đổi chuỗi thành số thực
-        // vd: parseInt("10.5")); ket qua là 10.5
-        //     parseFloat("10.5")); ket qua là 10
+    // Đổi chữ hoa/thường
+    document.writeln("Chữ hoa: " + myString.toUpperCase() + "<br>");
+    document.writeln("Chữ thường: " + myString.toLowerCase() + "<br>");
 
-        // toFixed() để định dạng số với số chữ số thập phân nhất định
-        // vd: var pi = 3.14159;
-        //     toFixed()
+    // Kiểm tra ký tự có tồn tại không
+    document.writeln("Chuỗi có chứa 'i' không: " + myString.includes('i') + "<br>");
 
-        // Kiểm tra số
-        // isNaN(): Kiểm tra xem một giá trị có phải là NaN (Not-a-Number) hay không
-        // isFinite(): Kiểm tra xem giá trị có phải là 1 số hữu hạn hay không
-        //         isNaN(NaN); //Kết quả: true
-        //         isFinite(NaN); Kết quả: true
+    // Tách chuỗi thành mảng
+    document.writeln("Tách chuỗi thành mảng: " + myString.split('') + "<br>");
 
-        // Date, time
-        let toDay = new Date();
-        document.writeln(toDay);
-        // * document.writeln(toDay.getMonth); lấy theo ngày, theo tháng, theo năm toDay.+(date;day;month;...)
-    </script>
+    // 6. Làm việc với mảng
+    let danhSach = ["Pham Van A", "Nguyen Van B", "Hoang Thi C", "To Thi D"];
+    document.writeln("Tên có bắt đầu bằng 'Nguyen'? " + danhSach[1].startsWith("Nguyen") + "<br>");
+
+    // 7. Chuyển đổi chuỗi số thành số thật sự
+    let so = "123";
+    document.writeln("Kiểu dữ liệu ban đầu: " + typeof(so) + "<br>");
+    document.writeln("Sau khi Number(): " + typeof(Number(so)) + "<br>");
+    document.writeln("parseInt('10.5') = " + parseInt("10.5") + "<br>");
+    document.writeln("parseFloat('10.5') = " + parseFloat("10.5") + "<br>");
+
+    // Làm tròn số với toFixed()
+    var pi = 3.14159;
+    document.writeln("Pi làm tròn 2 chữ số: " + pi.toFixed(2) + "<br>");
+
+    // 8. Kiểm tra số
+    document.writeln("isNaN('ABC') = " + isNaN("ABC") + "<br>"); // true vì 'ABC' không phải số
+    document.writeln("isFinite(100) = " + isFinite(100) + "<br>"); // true vì 100 là số hữu hạn
+
+    // 9. Làm việc với Date
+    let toDay = new Date();
+    document.writeln("Thời gian hiện tại: " + toDay + "<br>");
+    document.writeln("Năm: " + toDay.getFullYear() + "<br>");
+    document.writeln("Tháng (0-11): " + (toDay.getMonth()+1) + "<br>");
+    document.writeln("Ngày: " + toDay.getDate() + "<br>");
+  </script>
 </body>
 </html>

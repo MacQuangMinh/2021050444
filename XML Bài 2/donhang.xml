@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DonHang xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="xml_bai2.xsd">
+
+  <MaKH>KH001</MaKH>
+  <TenKH>Tran Thi B</TenKH>
+  <DiaChi>123 Le Loi</DiaChi>
+
+  <MatHang>
+    <MaMH>SP01</MaMH>
+    <TenMH>Ban phim</TenMH>
+    <SoLuong>2</SoLuong>
+    <DonGia>150000</DonGia>
+  </MatHang>
+
+  <MatHang>
+    <MaMH>SP02</MaMH>
+    <TenMH>Chuot may tinh</TenMH>
+    <SoLuong>1</SoLuong>
+    <DonGia>250000</DonGia>
+  </MatHang>
+
+</DonHang>
