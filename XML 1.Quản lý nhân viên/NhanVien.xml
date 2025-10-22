@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DanhSachNhanVien xmlns="http://example.org/nhanvien">
+    <NhanVien>
+        <MaNV>NV001</MaNV>
+        <HoTen>Nguyen Van A</HoTen>
+        <PhongBan>Kế toán</PhongBan>
+        <Luong>5000000</Luong>
+    </NhanVien>
+    <NhanVien>
+        <MaNV>NV002</MaNV>
+        <HoTen>Mac Quang Minh</HoTen> <!-- tên sinh viên -->
+        <PhongBan>Kỹ thuật</PhongBan>
+        <Luong>7000000</Luong>
+    </NhanVien>
+</DanhSachNhanVien>

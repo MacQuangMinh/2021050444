@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DonHang xmlns="http://example.org/donhang"
+         xmlns:nv="http://example.org/nhanvien"
+         xmlns:kh="http://example.org/khachhang"
+         xmlns:dt="http://example.org/dienthoai">
+    
+    <MaHD>HD001</MaHD>
+    <NgayLap>2025-10-02</NgayLap>
+    
+    <!-- Khách hàng -->
+    <kh:KhachHang>
+        <kh:MaKH>KH00002</kh:MaKH>
+        <kh:TenKH>Mac Quang Minh</kh:TenKH>
+        <kh:NgaySinh>2002-280-12</kh:NgaySinh>
+        <kh:SoDienThoai>0987654321</kh:SoDienThoai>
+        <kh:Email>minh@example.com</kh:Email>
+    </kh:KhachHang>
+    
+    <!-- Nhân viên -->
+    <nv:NhanVien>
+        <nv:MaNV>NV002</nv:MaNV>
+        <nv:HoTen>Mac Quang Minh</nv:HoTen>
+        <nv:PhongBan>Kỹ thuật</nv:PhongBan>
+        <nv:Luong>7000000</nv:Luong>
+    </nv:NhanVien>
+    
+    <!-- Danh sách điện thoại -->
+    <DanhSachSanPham>
+        <SanPham>
+            <dt:DienThoai>
+                <dt:MaDT>DT001</dt:MaDT>
+                <dt:TenDT>iPhone 15 Pro</dt:TenDT>
+                <dt:HangSX>Apple</dt:HangSX>
+                <dt:Gia>32000000</dt:Gia>
+            </dt:DienThoai>
+            <SoLuong>1</SoLuong>
+        </SanPham>
+        <SanPham>
+            <dt:DienThoai>
+                <dt:MaDT>DT002</dt:MaDT>
+                <dt:TenDT>Samsung Galaxy S24</dt:TenDT>
+                <dt:HangSX>Samsung</dt:HangSX>
+                <dt:Gia>25000000</dt:Gia>
+            </dt:DienThoai>
+            <SoLuong>2</SoLuong>
+        </SanPham>
+    </DanhSachSanPham>
+    
+</DonHang>

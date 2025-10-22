@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DanhSachKhachHang xmlns="http://example.org/khachhang">
+    <KhachHang>
+        <MaKH>KH00001</MaKH>
+        <TenKH>Tran Thi B</TenKH>
+        <NgaySinh>1999-05-10</NgaySinh>
+        <SoDienThoai>0912345678</SoDienThoai>
+        <Email>tranb@example.com</Email>
+    </KhachHang>
+    <KhachHang>
+        <MaKH>KH00002</MaKH>
+        <TenKH>Mac Quang Minh</TenKH> <!-- tên sinh viên -->
+        <NgaySinh>2003-08-15</NgaySinh> <!-- ngày sinh của bạn -->
+        <SoDienThoai>0987654321</SoDienThoai>
+        <Email>minh@example.com</Email>
+    </KhachHang>
+</DanhSachKhachHang>

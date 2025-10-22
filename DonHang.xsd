@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:nv="http://example.org/nhanvien"
+           xmlns:kh="http://example.org/khachhang"
+           xmlns:dt="http://example.org/dienthoai"
+           targetNamespace="http://example.org/donhang"
+           xmlns="http://example.org/donhang"
+           elementFormDefault="qualified">
+    
+    <!-- Import 3 schema -->
+    <xs:import namespace="http://example.org/nhanvien" schemaLocation="NhanVien.xsd"/>
+    <xs:import namespace="http://example.org/khachhang" schemaLocation="KhachHang.xsd"/>
+    <xs:import namespace="http://example.org/dienthoai" schemaLocation="DienThoai.xsd"/>
+    
+    <xs:element name="DonHang">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MaHD" type="xs:string"/>
+                <xs:element name="NgayLap" type="xs:date"/>
+                <xs:element ref="kh:KhachHang"/>
+                <xs:element ref="nv:NhanVien"/>
+                <xs:element name="DanhSachSanPham">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SanPham" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element ref="dt:DienThoai"/>
+                                        <xs:element name="SoLuong" type="xs:positiveInteger"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

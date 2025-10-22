@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.org/nhanvien"
+           xmlns="http://example.org/nhanvien"
+           elementFormDefault="qualified">
+    
+    <xs:element name="DanhSachNhanVien">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="NhanVien" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MaNV" type="MaNVType"/>
+                            <xs:element name="HoTen" type="xs:string"/>
+                            <xs:element name="PhongBan" type="PhongBanType"/>
+                            <xs:element name="Luong" type="LuongType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <!-- Kiểu dữ liệu -->
+    <xs:simpleType name="MaNVType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="NV[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="PhongBanType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Kế toán"/>
+            <xs:enumeration value="Kỹ thuật"/>
+            <xs:enumeration value="Nhân sự"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="LuongType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="3000000"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

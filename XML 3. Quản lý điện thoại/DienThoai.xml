@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DanhSachDienThoai xmlns="http://example.org/dienthoai">
+    <DienThoai>
+        <MaDT>DT001</MaDT>
+        <TenDT>iPhone 15 Pro</TenDT>
+        <HangSX>Apple</HangSX>
+        <Gia>32000000</Gia>
+    </DienThoai>
+    <DienThoai>
+        <MaDT>DT002</MaDT>
+        <TenDT>Samsung Galaxy S24</TenDT>
+        <HangSX>Samsung</HangSX>
+        <Gia>25000000</Gia>
+    </DienThoai>
+    <DienThoai>
+        <MaDT>DT003</MaDT>
+        <TenDT>Xiaomi 14</TenDT>
+        <HangSX>Xiaomi</HangSX>
+        <Gia>12000000</Gia>
+    </DienThoai>
+</DanhSachDienThoai>

@@ -7,61 +7,68 @@
 </head>
 <body>
    <script>
-// alert("Xin chào bạn!");
-    // let result = confirm("Press a button");
-    // if (result) {
-    //     document.write("Bạn đã bấm OK!");
-    // } else {
-    //     document.write("Bạn đã bấm Cancel!");
-    // }
+ alert("Xin chào bạn!");
+     let result = confirm("Press a button");
+     if (result) {
+         document.write("Bạn đã bấm OK!");
+     } else {
+         document.write("Bạn đã bấm Cancel!");
+     }
 
     // Hiển thị hội thoại nhập liệu
-    // let result2 = prompt("Nhập tên của bạn:", "Nguyen Van A");
+     let result2 = prompt("Nhập tên của bạn:", "Nguyen Van A");
 
-    // if (result2 !== null) {
-    //     document.writeln("Xin chào, " + result2 + "!");
-    // } else {
-    //     document.writeln("Bạn đã bấm Cancel!");
-    // }
+     if (result2 !== null) {
+         document.writeln("Xin chào, " + result2 + "!");
+     } else {
+         document.writeln("Bạn đã bấm Cancel!");
+     }
+     
+    let toDay = new Date(); // Tạo đối tượng ngày giờ hiện tại
+    let theDay = toDay.getDay(); // Lấy thứ trong tuần (0-6)
 
-    // let toDay = new Date(); // Tạo đối tượng ngày giờ hiện tại
-    // let theDay = toDay.getDay(); // Lấy thứ trong tuần (0-6)
-
-    // switch (theDay) {
-    //      case 0:
-    //         document.writeln("case 0 = Hôm nay là Chủ Nhật");
-    //         break; (break = dừng)
-    //      case 1:
-    //         document.writeln(case 1 = "Hôm nay là Thứ Hai");
-    //         break;
-    //      case 2:
-    //         document.writeln(case 2 ="Hôm nay là Thứ Ba");
-    //         break; 
-    //     case 3:
-    //         document.writeln(case 3 ="Hôm nay là Thứ Tư");
-    //         break;
-    //     case 4:
-    //         document.writeln(case 4 ="Hôm nay là Thứ Năm");
-    //         break;
-    //     case 5:
-    //         document.writeln(case 5 ="Hôm nay là Thứ Sáu");
-    //         break;
-    //     case 6:
-    //         document.writeln(case 6 ="Hôm nay là Thứ Bảy");
-    //         break;
-    //     default:
-    //         document.writeln("Không xác định được thứ");
-    //      }
-
+        switch (theDay) {
+            case 0:
+                document.writeln("Hôm nay là Chủ Nhật");
+                break;
+            case 1:
+                document.writeln("Hôm nay là Thứ Hai");
+                break;
+            case 2:
+                document.writeln("Hôm nay là Thứ Ba");
+                break;
+            case 3:
+                document.writeln("Hôm nay là Thứ Tư");
+                break;
+            case 4:
+                document.writeln("Hôm nay là Thứ Năm");
+                break;
+            case 5:
+                document.writeln("Hôm nay là Thứ Sáu");
+                break;
+            case 6:
+                document.writeln("Hôm nay là Thứ Bảy");
+                break;
+            default:
+                document.writeln("Không xác định được thứ");
+        }
         // Vòng lặp
-        //  let arrNum = [0,1,2,3,4,5,6];
-        // // for (let i = 1; i <= 1000; i++) {
-        // //     document.writeln(i + "Anh xin lỗi được chưa? <br>")
-        // // }
-        // document.writeln(arrNum[5]);
-        // // for (let j = 0; i <= arrNum.length; i++) {
-        // //     document.writeln(arrNum[j] <br>")
-        // // }
+    // Mảng số
+    let arrNum = [0, 1, 2, 3, 4, 5, 6];
+
+    // In ra phần tử thứ 5 (chỉ số 5 = giá trị 5)
+    document.writeln("arrNum[5] = " + arrNum[5] + "<br>");
+
+    // Vòng lặp in ra tất cả phần tử trong mảng
+    for (let j = 0; j < arrNum.length; j++) {
+        document.writeln("Phần tử thứ " + j + " = " + arrNum[j] + "<br>");
+    }
+
+    // Vòng lặp in 1000 lần câu xin lỗi
+    for (let i = 1; i <= 1000; i++) {
+        document.writeln(i + ". Anh xin lỗi được chưa? <br>");
+    }
+        
         // let danhSach = ["Lương Ngọc	Bích ", "Dương Gia Bình ", "Nguyễn Như Thành Danh ", "Hoàng Xuân Duẩn ", "Hà Văn	Dũng"];
         // for (let i= 0; i < danhSach.length; i++){
         //     document.writeln("Xin chào" + danhSach[i]);
@@ -118,24 +125,24 @@
 
 // let soNguoiDung = prompt("Nhập vào một số:", "0");
 // kiemTraChanLe(Number(soNguoiDung));
-let N1 = prompt("Mời bạn nhập số:"); // abc
+// let N1 = prompt("Mời bạn nhập số:"); // abc
 
-        function check(N1) {
-            if (N1 % 2 == 0) {
-                document.write(N1 + " là số chẵn");
-            } else {
-                document.write(N1 + " là số lẻ");
-            }
-        }
+//         function check(N1) {
+//             if (N1 % 2 == 0) {
+//                 document.write(N1 + " là số chẵn");
+//             } else {
+//                 document.write(N1 + " là số lẻ");
+//             }
+//         }
 
-        //N1 (abc) is not a number (true)
-        if (!isNaN(N1)) {
-            N1 = parseFloat(N1);
-            check(N1);
-        }
-        else {
-            document.writeln("Vui lòng nhập vào số!");
-        }
+//         //N1 (abc) is not a number (true)
+//         if (!isNaN(N1)) {
+//             N1 = parseFloat(N1);
+//             check(N1);
+//         }
+//         else {
+//             document.writeln("Vui lòng nhập vào số!");
+//         }
 
 </script>
 </body>
