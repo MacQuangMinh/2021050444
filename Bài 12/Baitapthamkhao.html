@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tính chỉ số BMI</title>
+  <style>
+    :root{
+      --ok: #16a34a;     /* xanh cho bình thường */
+      --warn:#f59e0b;    /* vàng cho thừa cân */
+      --bad:#ef4444;     /* đỏ cho béo phì */
+      --cold:#3b82f6;    /* xanh nước biển cho thiếu cân */
+    }
+    body{font-family: Arial, sans-serif; padding:24px; text-align:center}
+    .khung{max-width:520px; margin:0 auto; padding:20px; border:1px solid #e5e7eb; border-radius:14px}
+    .row{display:flex; gap:10px; justify-content:center; margin:8px 0}
+    input{
+      padding:10px 12px; width:220px; border:1px solid #cbd5e1; border-radius:10px;
+    }
+    button{padding:10px 18px; border:0; border-radius:10px; cursor:pointer}
+    button:hover{filter:brightness(0.95)}
+    #thongbao{margin-top:10px; min-height:24px; color:#ef4444; font-weight:600}
+    #ketqua{margin-top:14px; font-size:20px; font-weight:700}
+    #hinh{margin-top:14px; width:210px; display:none}
+    .nhan{font-weight:700}
+  </style>
+</head>
+<body>
+  <h2>Tính chỉ số BMI</h2>
+
+  <div class="khung">
+    <div class="row">
+      <label class="nhan" for="cannang">Cân nặng (kg):</label>
+      <input id="cannang" type="number" placeholder="vd: 65" step="0.1" min="10" max="300">
+    </div>
+    <div class="row">
+      <label class="nhan" for="chieucao">Chiều cao (m):</label>
+      <input id="chieucao" type="number" placeholder="vd: 1.70" step="0.01" min="0.5" max="2.5">
+    </div>
+    <button onclick="tinhBMI()">Kiểm tra BMI</button>
+
+    <div id="thongbao" aria-live="polite"></div>
+    <div id="ketqua"></div>
+    <img id="hinh" alt="Mức BMI">
+  </div>
+
+  <script>
+    // Enter để tính nhanh
+    ["cannang","chieucao"].forEach(id=>{
+      document.getElementById(id).addEventListener("keydown", e=>{
+        if(e.key==="Enter") tinhBMI();
+      });
+    });
+
+    function tinhBMI(){
+      const cn = parseFloat(document.getElementById("cannang").value);
+      const cc = parseFloat(document.getElementById("chieucao").value);
+      const tb = document.getElementById("thongbao");
+      const kq = document.getElementById("ketqua");
+      const img = document.getElementById("hinh");
+
+      // reset
+      tb.textContent = "";
+      kq.textContent = "";
+      img.style.display = "none";
+      img.removeAttribute("src");
+
+      // Kiểm tra nhập liệu (theo yêu cầu "Trường hợp 1")
+      if (isNaN(cn) || isNaN(cc) || cn <= 0 || cc <= 0){
+        tb.textContent = "Vui lòng nhập cân nặng và chiều cao hợp lệ!";
+        return;
+      }
+      if (cc < 0.5 || cc > 2.5 || cn < 10 || cn > 300){
+        tb.textContent = "Giá trị có vẻ không thực tế. Hãy kiểm tra lại (CN 10–300kg, CC 0.5–2.5m).";
+        return;
+      }
+
+      // Tính BMI (theo công thức đã học)
+      const bmi = cn / (cc*cc);
+      const b = Number(bmi.toFixed(1));
+
+      // Xác định mức & ảnh (theo bộ ảnh bạn có)
+      let muc = "", file = "", mau = "#111";
+
+      if (b < 18.5){
+        muc = "Thiếu cân"; file = "thieu.png"; mau = getComputedStyle(document.documentElement).getPropertyValue('--cold');
+      } else if (b < 25){
+        muc = "Bình thường"; file = "binhthuong.png"; mau = getComputedStyle(document.documentElement).getPropertyValue('--ok');
+      } else if (b < 30){
+        muc = "Thừa cân"; file = "thua.png"; mau = getComputedStyle(document.documentElement).getPropertyValue('--warn');
+      } else if (b < 40){
+        muc = "Béo phì cấp độ 1-2"; file = "beocapdo1.png"; mau = getComputedStyle(document.documentElement).getPropertyValue('--bad');
+      } else {
+        muc = "Béo phì nặng"; file = "beonang.png"; mau = getComputedStyle(document.documentElement).getPropertyValue('--bad');
+      }
+
+      // Hiển thị (theo yêu cầu "Trường hợp 2")
+      kq.textContent = `BMI: ${b} — ${muc}`;
+      kq.style.color = mau;
+      img.src = file;        // ảnh nằm cùng thư mục với index.html
+      img.style.display = "inline-block";
+    }
+  </script>
+</body>
+</html>
