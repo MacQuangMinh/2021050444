@@ -40,34 +40,40 @@
         </div>
         <div class="container">
             <div>
-                <div style="display: flex; justify-content: center;">
-                    <img class="banner" src="640x396-muado.jpg" alt="">
-                </div>
-                <div style="display: flex; justify-content: center;">
+                <!-- Bài tập về nhà -->
+<!-- Banner chính  -->
+        <div class="banner-wrap">
+            <img class="banner" src="640x396-muado.jpg" alt="Banner phim">
+        <div class="info-bar">
+            <span class="info-name">Mưa đỏ</span>
+            <span class="dot">•</span>
+            <span class="info-year">2023</span>
+            <span class="dot">•</span>
+            <span class="info-time">1.5 giờ</span>
+            <span class="dot">•</span>
+            <span class="info-country">Việt Nam</span>
+        <button class="btn-xemngay" onclick="moVideo()">Xem ngay</button>
+        </div>
+    </div>
+            <div style="display: flex; justify-content: center;">
                     <img class="qc" src="qc.jpg" alt="">
-                </div>
-            </div>
+            </div>  
+            </div>       
             <div class="theloai">
                 <div class="tentheloai">
                     Phim chiếu rạp
                 </div>
                 <div class="danhsach">
-                    <div class="phim">
+                    <div class="phim" onclick="chooseFilm(1)">
                         <div class="anh">
-                            <img src="350x495-muado.jpg" alt="">
-                        </div>
-                        <div class="ten">
-                            Mưa đỏ
-                        </div>
+                            <img src="350x495-muado.jpg" alt=""></div>
+                        <div class="ten">Mưa đỏ</div>
                     </div>
-                    <div class="phim">
+                    <div class="phim" onclick="chooseFilm(2)">
                         <div class="anh">
-                            <img src="350x495-muado.jpg" alt="">
-                        </div>
-                        <div class="ten">
-                            Mưa đỏ
-                        </div>
-                    </div>
+                            <img src="conanbaner.jpg" alt=""></div>
+                        <div class="ten">Conan</div>
+                </div>
                     <div class="phim">
                         <div class="anh">
                             <img src="350x495-muado.jpg" alt="">
@@ -406,5 +412,49 @@
   </div>
 </footer>
 </body>
+<script>
+// DỮ LIỆU PHIM
+const listFilm = [
+  {
+    id: 1,
+    name: "Mưa đỏ",
+    banner: "640x396-muado.jpg", 
+    year: 2023,
+    time: "1.5 giờ",
+    country: "Việt Nam"
+  },
+  {
+    id: 2,
+    name: "Conan",
+    banner: "banner conan.jpg",     
+    year: 2024,
+    time: "2 giờ",
+    country: "Nhật Bản"
+  }
+];
+// Đến đây e làm mãi không được nên có tham khảo chat GPT hỗ trợ ạ :((
 
+// ===== LẤY PHẦN TỬ CẦN CẬP NHẬT =====
+const bannerImg   = document.querySelector(".banner");
+const infoName    = document.querySelector(".info-bar .info-name");
+const infoYear    = document.querySelector(".info-bar .info-year");
+const infoTime    = document.querySelector(".info-bar .info-time");
+const infoCountry = document.querySelector(".info-bar .info-country");
+
+// ===== CLICK CARD → ĐỔI BANNER + INFO =====
+function chooseFilm(id){
+  const f = listFilm.find(x => x.id === id);
+  if (!f) {
+    console.warn("Không tìm thấy phim id:", id);
+    return;
+  }
+  bannerImg.src = f.banner;
+  infoName.textContent = f.name;
+  infoYear.textContent = f.year;
+  infoTime.textContent = f.time;
+  infoCountry.textContent = f.country;
+}
+
+</script>
+<script src="script.js"></script>
 </html>
