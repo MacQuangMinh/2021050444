@@ -21,6 +21,26 @@ header {
     padding: 10px 0; /* trên dưới 10px */
 }
 
+.danhmuc-lienket:hover {
+  transform: scale(1.05);
+  color: wheat
+}
+
+.chucnang:hover {
+  transform: scale(1.05);
+  color: lightblue;
+}
+
+.dangnhap:hover {
+  transform: scale(1.05);
+  color: lightgreen;
+}
+
+.muagoi:hover {
+  transform: ; scale: (1.05);
+  color: yellow;
+}
+
 .logo {
     width: 15%; /* logo chiếm 15% */
 }
@@ -86,7 +106,33 @@ main {
 .banner {
     width: 98%; /* banner gần full */
 }
+ .nut-hanhdong {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
 
+.nut-hanhdong button {
+  background-color: #ff6600;
+  border: 1px solid #ccc;
+  padding: 5px 10px;  
+  border-radius: 5px;
+}
+
+.nut-hanhdong button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.nut-tim {
+  color: black;
+  font-size: 18px;
+}
+
+.nut-chia-se {
+  font-size: 18px;
+  color: black;
+}
 .qc {
     margin-top: 10px; /* cách trên 10px */
     width: 98%; /* rộng gần full */
@@ -102,36 +148,61 @@ main {
 }
 
 .danhsach {
-    display: flex; /* flexbox */
-    justify-content: space-evenly; /* chia đều item */
-    margin-top: 20px; /* cách trên */
+    display: flex; /* xếp ngang */
+    gap: 15px; /* khoảng cách giữa các phim */
+    overflow: hidden; /* ẩn phần tràn khi trượt */
+    transition: transform 0.5s ease; /* hiệu ứng trượt */
+    margin-top: 20px;
 }
 
 .phim {
-    width: 19%; /* mỗi phim chiếm 19% ngang */
+    flex: 0 0 19%; /* mỗi phim chiếm khoảng 19% khung */
+    text-align: center;
+    cursor: pointer;
 }
 
 .phim img {
-    width: 100%; /* full khung */
-    border-radius: 12px; /* bo tròn */
-    overflow: hidden; /* tránh tràn góc */
-    transition: transform 0.3s ease; /* hiệu ứng hover */
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .phim img:hover {
-    transform: scale(1.05); /* phóng to nhẹ khi hover */
+    transform: scale(1.05);
 }
 
+/* Nút chuyển phim */
+.nut-chuyen {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nut-chuyen button {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nut-chuyen button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+/* Footer vẫn giữ nguyên */
 .chantrang {
-  background: #111; /* nền xám đen */
-  color: #ddd; /* chữ xám nhạt */
-  padding: 40px 20px; /* khoảng cách trong */
-  font-family: Arial, sans-serif; /* font chữ */
+  background: #111;
+  color: #ddd;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
 }
 
 .khungchantrang {
-    max-width: 1200px; /* khung rộng tối đa */
-    margin: auto; /* căn giữa */
+    max-width: 1200px;
+    margin: auto;
 }
 
 .hangtren {

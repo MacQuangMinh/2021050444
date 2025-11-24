@@ -1,58 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fptplay.vn</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>fptplay.vn</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <!-- Danh mục trang web -->
-            <nav class="danhmuc">
-                <img class="Logo" src="../image/Logo FPT.jpg" alt="">
-                <ul class="Danh muc-danhsach">
-                    <li class="danhmuc-lienket"><a href="#">Trang chủ</a></li>
-                    <li class="danhmuc-lienket"><a href="#">Truyền hình</a></li>
-                    <li class="danhmuc-lienket"><a href="#">Phim bộ</a></li>
-                    <li class="danhmuc-lienket"><a href="#">V.Leagua</a></li>
-                    <li class="danhmuc-lienket"><a href="#">Thiếu nhi</a></li>
-                    <li class="danhmuc-lienket"><a href="#">Xem thêm</a></li>
-                </ul>
-            </nav>
-            <!-- Chức năng -->
-            <div class="Chucnang">
-                <button class="muagoi">Mua gói</button>
-                <button class="dangnhap">Đăng nhập</button>
-            </div>
-    </header>
-    <main>
-        <div class="quangcao">
-            <div style="display: flex; justify-content: center; height: 100px"></div>
-            <img src="../image/FPT.jpg" alt="">
-        </div>
-        <div class="container">
-             <div>
-                <div style="display: flex; justify-content: center; height: 500px;">
-                <img class="banner" src="../image/Logo FPT.jpg" alt="">
-             </div>
-             <div>
-                <div style="display: flex; justify-content: center; width: 100%; height: 100px;">
-                <img class="quangcao" src="../image/qc.jpg" alt="">
-             </div>
-        </div>
-        <div class="theloai">
-            <div class="tentheloai">Phim chiếu rạp</div>
-            <div style="width: 100%;"
-        </div>
-    </main>
-    <footer>
+  <header>
+    <div class="header-container">
+      <!-- Danh mục trang web -->
+      <nav class="danhmuc">
+        <img class="logo" src="../image/Logo FPT.jpg" alt="FPT Play">
+        <ul class="danhmuc-danhsach">
+          <li class="danhmuc-lienket"><a href="#">Trang chủ</a></li>
+          <li class="danhmuc-lienket"><a href="#">Truyền hình</a></li>
+          <li class="danhmuc-lienket"><a href="#">Phim bộ</a></li>
+          <li class="danhmuc-lienket"><a href="#">V.League</a></li>
+          <li class="danhmuc-lienket"><a href="#">Thiếu nhi</a></li>
+          <li class="danhmuc-lienket"><a href="#">Xem thêm</a></li>
+        </ul>
+      </nav>
 
-    </footer>
+      <!-- Chức năng -->
+      <div class="chucnang">
+        <button class="muagoi">Mua gói</button>
+        <button class="dangnhap">Đăng nhập</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- QC đầu trang -->
+    <div class="quangcao" style="height:100px; align-items:center;">
+      <img src="../image/FPT.jpg" alt="QC đầu trang">
+    </div>
+
+    <div class="container">
+      <!-- Banner + QC ngang -->
+      <div>
+        <div style="display:flex; justify-content:center;">
+          <img class="banner" src="../image/Logo FPT.jpg" alt="Banner chính">
+        </div>
+        <div style="display:flex; justify-content:center;">
+          <img class="qc" src="../image/qc.jpg" alt="QC ngang">
+        </div>
+      </div>
+
+      <!-- Trailer cũ (ẩn), giữ cho khớp bài trước nếu cần test -->
+      <div class="trailer" style="display:none; text-align:center; margin:16px 0;">
+        <iframe id="trailerFrame" width="640" height="360" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- Thể loại: Phim chiếu rạp -->
+      <div class="theloai">
+        <div class="tentheloai">Phim chiếu rạp</div>
+        <div class="danhsach" id="ds-chieurap"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (để trống tuỳ cậu bổ sung) -->
+  <footer class="chantrang">
+    <div class="khungchantrang">
+      <!-- … có thể chép phần footer chuẩn của cậu ở đây … -->
+    </div>
+  </footer>
+
+  <!-- Modal xem phim (khớp CSS cậu đã có) -->
+  <div class="modal" id="filmModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="mdTitle">
+      <button class="close" id="mdClose" title="Đóng">✕</button>
+      <div class="modal-top">
+        <img id="mdPoster" src="" alt="Poster">
+        <div class="md-info">
+          <h3 id="mdTitle">—</h3>
+          <div id="mdType" style="opacity:.8; margin-bottom:8px;">—</div>
+        </div>
+      </div>
+      <div class="md-trailer">
+        <iframe id="mdTrailer" src="" frameborder="0" allowfullscreen title="Trailer"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS inline -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // ===== Data sát bài thầy =====
+    const listFilm = [
+      {
+        id: 1,
+        name: "Nụ đỏ",
+        type: "Phim chiếu rạp",
+        banner: "../image/nu-do2-1122.jpg",             // đổi đường dẫn theo thư mục của cậu
+        trailer: "https://www.youtube.com/embed/BD6PozJdt_M"
+      },
+      {
+        id: 2,
+        name: "Conan",
+        type: "Phim hoạt hình",
+        banner: "../image/conan-banner.jpg",
+        trailer: "https://www.youtube.com/embed/BD6PozJdt_M"
+      }
+    ];
+
+    // Giữ các biến/hàm cũ để không lạc đề
+    const bannerElement  = document.getElementsByClassName("banner")[0];
+    const trailerElement = document.getElementsByClassName("trailer")[0];
+    const trailerFrame   = document.getElementById("trailerFrame");
+
+    function viewTrailer(url) {
+      if (!trailerElement) return;
+      if (bannerElement) bannerElement.style.display = "none";
+      trailerFrame.src = url || "";
+      trailerElement.style.display = "block";
+    }
+
+    function chooseFilm(filmId) {
+      const selectedFilm = listFilm.find(f => f.id == filmId);
+      if (!selectedFilm) return;
+      openModal(selectedFilm); // mở modal hiển thị trailer + info
+    }
+
+    // Render danh sách phim
+    const dsChieuRap = document.getElementById('ds-chieurap');
+    renderFilms(dsChieuRap, listFilm);
+
+    function renderFilms(container, films){
+      container.innerHTML = '';
+      films.forEach(film => {
+        const el = document.createElement('div');
+        el.className = 'phim';
+        el.setAttribute('data-film-id', film.id);
+        el.innerHTML = `
+          <img src="${film.banner}" alt="${film.name}">
+          <div class="phim-ten" style="text-align:center; padding:6px 0;">${film.name}</div>
+        `;
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', () => openModal(film));   // click → trailer + info
+        el.addEventListener('dblclick', (e) => {               // dblclick → khu trailer cũ
+          e.stopPropagation();
+          viewTrailer(film.trailer);
+        });
+        container.appendChild(el);
+      });
+    }
+
+    // Modal logic
+    const filmModal = document.getElementById('filmModal');
+    const mdClose   = document.getElementById('mdClose');
+    const mdPoster  = document.getElementById('mdPoster');
+    const mdTitle   = document.getElementById('mdTitle');
+    const mdType    = document.getElementById('mdType');
+    const mdTrailer = document.getElementById('mdTrailer');
+
+    function openModal(film){
+      mdPoster.src        = film.banner || '';
+      mdTitle.textContent = film.name || '—';
+      mdType.textContent  = film.type || '—';
+      mdTrailer.src       = film.trailer || '';
+      filmModal.style.display = 'flex';
+      filmModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal(){
+      filmModal.style.display = 'none';
+      filmModal.setAttribute('aria-hidden', 'true');
+      mdTrailer.src = ''; // dừng video
+      if (trailerElement) { trailerElement.style.display = 'none'; trailerFrame.src = ''; }
+      if (bannerElement) bannerElement.style.display = '';
+    }
+
+    mdClose.addEventListener('click', closeModal);
+    filmModal.addEventListener('click', (e) => { if (e.target === filmModal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Expose cho console nếu thầy cần test
+    window.viewTrailer = viewTrailer;
+    window.chooseFilm  = chooseFilm;
+  });
+  </script>
 </body>
-
 </html>

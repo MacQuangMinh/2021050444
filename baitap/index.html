@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài làm – Tính BMI</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+    }
+    h2 { 
+      text-align: center; 
+    }
+    .khung { 
+      width: 700px; 
+      margin: 0 auto; 
+      display: flex; 
+      gap: 20px; 
+    }
+    .trai { 
+      flex: 1; 
+      padding: 16px; 
+      border: 1px 
+      solid #ddd; 
+      border-radius: 10px; 
+    }
+    .phai { 
+      width: 260px; 
+      height: 260px; 
+      border: 1px 
+      solid #ddd; 
+      border-radius: 10px; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+    }
+    .hang { 
+      margin: 8px 0; 
+    }
+    input, button { 
+      padding: 8px; 
+      width: 100%; 
+      box-sizing: border-box; 
+    }
+    #ketqua { margin-top: 10px; font-weight: bold; }
+    #hinh { max-width: 220px; display: none; }
+  </style>
+</head>
+<body>
+  <h2>Bài làm</h2>
+
+  <div class="khung">
+    <div class="trai">
+      <div class="hang">
+        <label>Nhập vào chiều cao (m):</label>
+        <input id="chieucao" type="number" step="0.01" placeholder="vd: 1.74">
+      </div>
+      <div class="hang">
+        <label>Nhập vào cân nặng (kg):</label>
+        <input id="cannang" type="number" step="0.1" placeholder="vd: 70">
+      </div>
+      <div class="hang">
+        <button onclick="tinhBMI()">Kiểm tra</button>
+      </div>
+      <div id="ketqua">Kết quả:</div>
+    </div>
+
+    <div class="phai">
+      <img id="hinh" alt="Ảnh mức BMI">
+    </div>
+  </div>
+
+  <script>
+    function tinhBMI() {
+      var cc = parseFloat(document.getElementById('chieucao').value);
+      var cn = parseFloat(document.getElementById('cannang').value);
+      var kq = document.getElementById('ketqua');
+      var img = document.getElementById('hinh');
+
+      // Trường hợp 1: thiếu hoặc sai
+      if (isNaN(cc) || isNaN(cn) || cc <= 0 || cn <= 0) {
+        alert('Vui lòng nhập chiều cao (m) và cân nặng (kg) hợp lệ!');
+        kq.textContent = 'Kết quả:';
+        img.style.display = 'none';
+        img.removeAttribute('src');
+        return;
+      }
+
+      // Tính BMI – làm tròn 2 chữ số như slide của thầy
+      var bmi = cn / (cc * cc);
+      var b = bmi.toFixed(2);
+
+      // Trường hợp 2: đúng -> hiện số + ảnh
+      kq.textContent = 'Chỉ số BMI của bạn là: ' + b;
+
+      // Chọn ảnh theo mức
+      // <18.5: thiếu; 18.5–24.9: bình thường; 25–29.9: thừa; 30–39.9: béo phì cấp 1-2; >=40: béo phì nặng
+      var file = '';
+      if (bmi < 18.5) file = 'thieu.png';
+      else if (bmi < 25) file = 'binhthuong.png';
+      else if (bmi < 30) file = 'thua.png';
+      else if (bmi < 40) file = 'beocapdo1.png';
+      else file = 'beonang.png';
+
+      img.src = file;
+      img.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

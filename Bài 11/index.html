@@ -2,60 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài 11</title>
 </head>
 <body>
-    <h1> Bài 11 </h1>
-    <!-- Tạo hàm JS tính điểm của sinh sinh viên dựa vào 3 diểm A,B,C biết điểm tổng = A*60.6 + B*0.3 + C*0.1 -->
-    
-  <!-- <script>
-    function tinhDiem(a,b,c) {
-        let tong;
-        if (kiemTraHopLe(a, b, c,) == true) {
-            tong = a * 0.6 + b * 0.3 + c * 0.1;
-            document.writeln(tong);
-        }
-        if (tong > 9) {
-            document.writeln("diem chu la A+");
-        }
-        if (tong >= 8.5 && tong < 9) {
-            document.writeln("diem chu la A");
-        }
-        if (tong >= 8 && tong < 8.5) {
-            document.writeln("diem chu la B+");
-        }
-        if (tong >= 7 && tong < 8) {
-            document.writeln("diem chu la B");
-        }
-        if (tong >= 6 && tong < 7) {
-            document.writeln("diem chu la C+");
-        }
-        if (tong < 6) {
-            document.writeln("diem chu la C");
-        }
-
-    function kiemTraHopLe(a, b, c) {
-        let ketQua =  true;
-        if (a < 0 || a > 10 || typeof(a) != 'number') {
-            document.writeln("Điểm A không hợp lệ");
-            ketQua = false;
-        }   
-        if (b < 0 || b > 10 || typeof(b) != 'number') {
-            document.writeln("Điểm B không hợp lệ");
-            ketQua = false;
-        }
-        if (c < 0 || c > 10 || typeof(c) != 'number') {
-            document.writeln("Điểm C không hợp lệ");
-            ketQua = false;
-        }
-        
-        let a = "10";
-        let b = "5";
-        let c = "15";
-        tinhDiem(a, b, c) -->
-        
-        <h2>Tính điểm</h2>
+    <h1>Bài 11</h1>
+    <h2>Tính điểm</h2>
 
     <div>
         Điểm A: <input type="number" id="diemA" placeholder="Nhập điểm A">
@@ -74,41 +25,62 @@
     </div>
 
     <script>
-        function tinhDiem() {
+        function xemKetQua(a,b,c){
+            let DiemA = parseFloat(document.getElementById("diemA").value);
+            let DiemB = parseFloat(document.getElementById("diemB").value);
+            let DiemC = parseFloat(document.getElementById("diemC").value);
+        }
+
+        function tinhDiem(){
             let a = parseFloat(document.getElementById("diemA").value);
             let b = parseFloat(document.getElementById("diemB").value);
             let c = parseFloat(document.getElementById("diemC").value);
+            let tong;
 
-            if (isNaN(a) || a < 0 || a > 10 ||
-                isNaN(b) || b < 0 || b > 10 ||
-                isNaN(c) || c < 0 || c > 10) {
-                document.getElementById("ketqua").innerText = "Điểm nhập không hợp lệ!";
-                return;
+            if (kiemTraHopLe(a,b,c) == true){
+                tong = a*0.6 + b*0.3 + c*0.1;
+
+                if(tong >= 9){
+                    document.writeln("Điểm của bạn là A+");
+                } else if(tong < 9 && tong >= 8.5){
+                    document.writeln("Điểm của bạn là A");
+                } else if(tong < 8.5 && tong >= 8){
+                    document.writeln("Điểm của bạn là B+");
+                } else if(tong < 8 && tong >= 7){
+                    document.writeln("Điểm của bạn là B");
+                } else if(tong < 7 && tong >= 6.5){
+                    document.writeln("Điểm của bạn là C+");
+                } else if(tong < 6.5 && tong >= 5.5){
+                    document.writeln("Điểm của bạn là C");
+                } else if(tong < 5.5 && tong >= 5){
+                    document.writeln("Điểm của bạn là D+");
+                } else if(tong < 5 && tong >= 4){
+                    document.writeln("Điểm của bạn là D");
+                } else if(tong<4) {
+                    document.writeln("Điểm của bạn là F");
+                }
             }
-
-            let tong = a * 0.6 + b * 0.3 + c * 0.1;
-            let diemChu = "";
-
-            if (tong > 9) {
-                diemChu = "A+";
-            } else if (tong >= 8.5) {
-                diemChu = "A";
-            } else if (tong >= 8) {
-                diemChu = "B+";
-            } else if (tong >= 7) {
-                diemChu = "B";
-            } else if (tong >= 6) {
-                diemChu = "C+";
-            } else {
-                diemChu = "C";
-            }
-
-            document.getElementById("ketqua").innerText = 
-                "Tổng điểm: " + tong.toFixed(2) + " → Điểm chữ: " + diemChu;
         }
-  </script>
-</body>
-</html>
 
+        function kiemTraHopLe(a,b,c){
+            let ketQua = true;
+
+            // CHỈ DÙNG isNaN — KHÔNG DÙNG indexOf
+            if (isNaN(a) || a < 0 || a > 10){
+                document.writeln("Điểm A nhập không hợp lệ<br>");
+                ketQua = false;
+            }
+            if (isNaN(b) || b < 0 || b > 10){
+                document.writeln("Điểm B nhập không hợp lệ<br>");
+                ketQua = false;
+            }
+            if (isNaN(c) || c < 0 || c > 10){
+                document.writeln("Điểm C nhập không hợp lệ<br>");
+                ketQua = false;
+            }
+
+            return ketQua;
+        }
+</script>
 </body>
 </html>

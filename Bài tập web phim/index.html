@@ -26,10 +26,10 @@
             <!-- Chức năng -->
             <div class="chucnang">
                 <div>
-                    <button class="muagoi">Mua Gói</button>
+                    <button class="muagoi" onclick="muagoi">Mua Gói</button>
                 </div>
                 <div>
-                    <button class="dangnhap">Đăng nhập</button>
+                    <button class="dangnhap" onclick="dangnhap">Đăng nhập</button>
                 </div>
             </div>
         </div>
@@ -52,7 +52,11 @@
             <span class="info-time">1.5 giờ</span>
             <span class="dot">•</span>
             <span class="info-country">Việt Nam</span>
-        <button class="btn-xemngay" onclick="moVideo()">Xem ngay</button>
+        <div class="nut-hanhdong">
+                <button class="nut-xem" onclick="xemPhim">Xem ngay</button>
+                <button class="nut-tim" onclick="thichPhim(this)">❤️</button>
+                <button class="nut-chia-se" onclick="chiaSe()">🔗</button>
+        </div>
         </div>
     </div>
             <div style="display: flex; justify-content: center;">
@@ -60,7 +64,7 @@
             </div>  
             </div>       
             <div class="theloai">
-                <div class="tentheloai">
+                <div class="tentheloai" >
                     Phim chiếu rạp
                 </div>
                 <div class="danhsach">
@@ -432,15 +436,14 @@ const listFilm = [
     country: "Nhật Bản"
   }
 ];
-// Đến đây e làm mãi không được nên có tham khảo chat GPT hỗ trợ ạ :((
-
-// ===== LẤY PHẦN TỬ CẦN CẬP NHẬT =====
+// Lấy phần tử
 const bannerImg   = document.querySelector(".banner");
 const infoName    = document.querySelector(".info-bar .info-name");
 const infoYear    = document.querySelector(".info-bar .info-year");
 const infoTime    = document.querySelector(".info-bar .info-time");
 const infoCountry = document.querySelector(".info-bar .info-country");
 
+// Đến đây e làm mãi không được nên có tham khảo chat GPT hỗ trợ ạ :((
 // ===== CLICK CARD → ĐỔI BANNER + INFO =====
 function chooseFilm(id){
   const f = listFilm.find(x => x.id === id);
